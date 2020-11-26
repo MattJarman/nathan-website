@@ -40,33 +40,33 @@ query {
 </page-query>
 
 <script>
-import Video from '@/components/Video';
+import Video from '@/components/Video'
 
 export default {
   name: 'Videos',
   components: { Video },
   methods: {
-    getGradient(index) {
-      const repetitions = 6;
-      const position = index % repetitions;
+    getGradient (index) {
+      const repetitions = 6
+      const position = index % repetitions
 
       switch (position) {
         case 0:
-          return 'from-indigo-400 via-purple-400 to-pink-500';
+          return 'from-indigo-400 via-purple-400 to-pink-500'
         case 1:
-          return 'from-green-400 via-teal-400 to-blue-400';
+          return 'from-green-400 via-teal-400 to-blue-400'
         case 2:
-          return 'from-yellow-400 via-orange-400 to-red-500';
+          return 'from-yellow-400 via-orange-400 to-red-500'
         case 3:
-          return 'from-green-600 via-blue-400 to-purple-500';
+          return 'from-green-600 via-blue-400 to-purple-500'
         case 4:
-          return 'from-pink-600 via-red-400 to-yellow-500';
+          return 'from-pink-600 via-red-400 to-yellow-500'
         case 5:
-          return 'from-blue-500 via-indigo-500 to-purple-400';
+          return 'from-blue-500 via-indigo-500 to-purple-400'
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>

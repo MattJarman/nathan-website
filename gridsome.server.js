@@ -46,12 +46,12 @@ module.exports = function (api) {
           original: {
             url: originalUrl,
             width: item.image.width,
-            height: item.image.height,
+            height: item.image.height
           },
           small: {
             url: smallUrl,
             width: item.image.formats.small.width,
-            height: item.image.formats.small.height,
+            height: item.image.formats.small.height
           }
         }
       })
@@ -82,7 +82,7 @@ module.exports = function (api) {
         name: item.name,
         title: item.title,
         date: item.dateRange,
-        description: item.description,
+        description: item.description
       })
     }
 

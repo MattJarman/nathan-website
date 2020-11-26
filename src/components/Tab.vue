@@ -10,26 +10,26 @@ export default {
   props: {
     name: {
       type: String,
-      required: true,
+      required: true
     },
     selected: {
       type: Boolean,
       required: true,
-      default: false,
-    },
+      default: false
+    }
   },
-  data() {
+  data () {
     return {
-      isActive: false,
-    };
+      isActive: false
+    }
   },
   computed: {
-    href() {
-      return '#' + this.name.toLowerCase().replace(/ /g, '-');
-    },
+    href () {
+      return '#' + this.name.toLowerCase().replace(/ /g, '-')
+    }
   },
-  mounted() {
-    this.isActive = this.selected;
-  },
-};
+  mounted () {
+    this.isActive = this.selected
+  }
+}
 </script>

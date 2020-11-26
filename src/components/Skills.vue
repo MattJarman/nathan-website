@@ -69,16 +69,16 @@ query {
 </static-query>
 
 <script>
-import Proficiency from '@/components/Proficiency';
-import Tool from '@/components/Tool';
+import Proficiency from '@/components/Proficiency'
+import Tool from '@/components/Tool'
 
 export default {
-  name: "Skills",
+  name: 'Skills',
   components: {
     Proficiency,
-    Tool,
-  },
-};
+    Tool
+  }
+}
 </script>
 
 <style scoped>

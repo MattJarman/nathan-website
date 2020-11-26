@@ -27,22 +27,22 @@
 <script>
 export default {
   name: 'Tabs',
-  data() {
+  data () {
     return {
-      tabs: [],
-    };
+      tabs: []
+    }
   },
-  created() {
-    this.tabs = this.$children;
+  created () {
+    this.tabs = this.$children
   },
   methods: {
-    selectTab(selectedTab) {
+    selectTab (selectedTab) {
       for (const tab of this.tabs) {
-        tab.isActive = tab.href === selectedTab.href;
+        tab.isActive = tab.href === selectedTab.href
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>

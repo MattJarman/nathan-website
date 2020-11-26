@@ -22,48 +22,48 @@ query {
 </static-query>
 
 <script>
-import Navbar from '@/components/Navbar.vue';
-import SocialLinks from '@/components/SocialLinks.vue';
+import Navbar from '@/components/Navbar.vue'
+import SocialLinks from '@/components/SocialLinks.vue'
 
 export default {
   components: {
     Navbar,
-    SocialLinks,
+    SocialLinks
   },
-  metaInfo() {
+  metaInfo () {
     return {
       title: this.$static.metadata.siteName,
       meta: [
         {
           key: 'description',
           name: 'description',
-          content: this.$static.metadata.siteDescription,
-        },
-      ],
-    };
-  },
-  mounted() {
-    this.updateVh();
-  },
-  created() {
-    if (process.isClient) {
-      window.addEventListener('resize', this.updateVh);
+          content: this.$static.metadata.siteDescription
+        }
+      ]
     }
   },
-  beforeDestroy() {
+  mounted () {
+    this.updateVh()
+  },
+  created () {
     if (process.isClient) {
-      window.removeEventListener('resize', this.updateVh);
+      window.addEventListener('resize', this.updateVh)
+    }
+  },
+  beforeDestroy () {
+    if (process.isClient) {
+      window.removeEventListener('resize', this.updateVh)
     }
   },
   methods: {
-    updateVh() {
+    updateVh () {
       if (process.isClient) {
-        const vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
+        const vh = window.innerHeight * 0.01
+        document.documentElement.style.setProperty('--vh', `${vh}px`)
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style>

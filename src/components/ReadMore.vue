@@ -35,14 +35,14 @@ export default {
   props: {
     text: {
       type: String,
-      required: true,
+      required: true
     },
     characters: {
       type: Object,
-      required: true,
-    },
+      required: true
+    }
   },
-  data() {
+  data () {
     return {
       readMoreActivated: false,
       maxCharacters: 200,
@@ -51,63 +51,63 @@ export default {
         sm: 640,
         md: 768,
         lg: 1024,
-        xl: 1280,
-      },
-    };
+        xl: 1280
+      }
+    }
   },
-  mounted() {
-    this.setMaxCharacters();
+  mounted () {
+    this.setMaxCharacters()
   },
   computed: {
-    needsReadMore() {
-      return this.text.length > this.maxCharacters;
+    needsReadMore () {
+      return this.text.length > this.maxCharacters
     },
-    shortenedText() {
-      return this.text.slice(0, this.maxCharacters) + '...';
-    },
+    shortenedText () {
+      return this.text.slice(0, this.maxCharacters) + '...'
+    }
   },
   methods: {
-    toggleReadMore() {
-      this.readMoreActivated = !this.readMoreActivated;
+    toggleReadMore () {
+      this.readMoreActivated = !this.readMoreActivated
     },
-    getScreenSize() {
-      const { innerWidth } = window;
+    getScreenSize () {
+      const { innerWidth } = window
 
       if (innerWidth < this.breakpoints.xs) {
-        return 'xs';
+        return 'xs'
       } else if (
         innerWidth >= this.breakpoints.xs &&
         innerWidth < this.breakpoints.sm
       ) {
-        return 'sm';
+        return 'sm'
       } else if (
         innerWidth >= this.breakpoints.sm &&
         innerWidth < this.breakpoints.md
       ) {
-        return 'md';
+        return 'md'
       } else if (
         innerWidth >= this.breakpoints.md &&
         innerWidth < this.breakpoints.lg
       ) {
-        return 'lg';
+        return 'lg'
       } else {
-        return 'xl';
+        return 'xl'
       }
     },
-    setMaxCharacters() {
-      const screen = this.getScreenSize();
+    setMaxCharacters () {
+      const screen = this.getScreenSize()
 
       if (Object.prototype.hasOwnProperty.call(this.characters, screen)) {
-        this.maxCharacters = this.characters[screen];
-        return;
+        this.maxCharacters = this.characters[screen]
+        return
       }
 
       if (Object.prototype.hasOwnProperty.call(this.characters, 'default')) {
-        this.maxCharacters = this.characters.default;
+        this.maxCharacters = this.characters.default
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>

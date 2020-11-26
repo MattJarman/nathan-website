@@ -23,18 +23,18 @@ export default {
   props: {
     icon: {
       type: Array,
-      required: true,
+      required: true
     },
     tools: {
-      required: true,
+      required: true
     },
     reversed: {
       type: Boolean,
       required: false,
-      default: false,
-    },
-  },
-};
+      default: false
+    }
+  }
+}
 </script>
 
 <style scoped>

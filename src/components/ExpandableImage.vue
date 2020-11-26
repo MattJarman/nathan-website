@@ -53,46 +53,46 @@
 </template>\
 
 <script>
-import { mixin as clickaway } from 'vue-clickaway';
+import { mixin as clickaway } from 'vue-clickaway'
 export default {
   name: 'ExpandableImage',
   mixins: [clickaway],
   props: {
     image: {
-      required: true,
-    },
-  },
-  data() {
-    return {
-      expanded: false,
-    };
-  },
-  created() {
-    if (process.isClient) {
-      window.addEventListener('keydown', this.processKey);
+      required: true
     }
   },
-  beforeDestroy() {
+  data () {
+    return {
+      expanded: false
+    }
+  },
+  created () {
     if (process.isClient) {
-      window.removeEventListener('keydown', this.processKey);
+      window.addEventListener('keydown', this.processKey)
+    }
+  },
+  beforeDestroy () {
+    if (process.isClient) {
+      window.removeEventListener('keydown', this.processKey)
     }
   },
   methods: {
-    processKey(e) {
+    processKey (e) {
       if (this.expanded) {
         if (e.code === 'Escape') {
-          this.closeModal();
+          this.closeModal()
         }
       }
     },
-    toggleExpanded() {
-      this.expanded = !this.expanded;
+    toggleExpanded () {
+      this.expanded = !this.expanded
     },
-    closeModal() {
-      this.expanded = false;
-    },
-  },
-};
+    closeModal () {
+      this.expanded = false
+    }
+  }
+}
 </script>
 
 <style scoped>
@@ -105,4 +105,3 @@ export default {
   opacity: 0;
 }
 </style>
-

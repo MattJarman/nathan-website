@@ -47,14 +47,14 @@ query {
 </static-query>
 
 <script>
-import Tab from '@/components//Tab';
-import Tabs from '@/components/Tabs';
+import Tab from '@/components//Tab'
+import Tabs from '@/components/Tabs'
 
 export default {
   name: 'WorkTabs',
   components: {
     Tab,
-    Tabs,
-  },
-};
+    Tabs
+  }
+}
 </script>

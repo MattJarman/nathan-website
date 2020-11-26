@@ -113,20 +113,20 @@
 <script>
 export default {
   name: 'Navbar',
-  data() {
+  data () {
     return {
-      isMenuOpen: false,
-    };
+      isMenuOpen: false
+    }
   },
   methods: {
-    hideMenu() {
-      this.isMenuOpen = false;
+    hideMenu () {
+      this.isMenuOpen = false
     },
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-    },
-  },
-};
+    toggleMenu () {
+      this.isMenuOpen = !this.isMenuOpen
+    }
+  }
+}
 </script>
 
 <style scoped>

@@ -52,36 +52,36 @@
 </template>
 
 <script>
-import ReadMore from "@/components/ReadMore";
+import ReadMore from '@/components/ReadMore'
 
 export default {
   name: 'Video',
   props: {
     title: {
       type: String,
-      required: true,
+      required: true
     },
     description: {
       type: String,
-      required: true,
+      required: true
     },
     embed: {
       type: String,
-      required: true,
+      required: true
     },
     link: {
       type: String,
-      required: true,
+      required: true
     },
     tags: {
       type: Array,
-      required: false,
-    },
+      required: false
+    }
   },
   components: {
-    ReadMore,
-  },
-};
+    ReadMore
+  }
+}
 </script>
 
 <style scoped>

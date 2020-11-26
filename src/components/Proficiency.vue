@@ -17,37 +17,37 @@
 <script>
 export default {
   name: 'Skill',
-  data() {
+  data () {
     return {
       max: 100,
-      min: 0,
-    };
+      min: 0
+    }
   },
   props: {
     name: {
       type: String,
-      required: true,
+      required: true
     },
     level: {
       type: Number, // Value should be 0 - 100
-      required: true,
-    },
+      required: true
+    }
   },
   computed: {
-    progressWidth() {
+    progressWidth () {
       return {
-        width: `${this.clamp(this.level)}%`,
-      };
-    },
+        width: `${this.clamp(this.level)}%`
+      }
+    }
   },
   methods: {
-    clamp(number) {
+    clamp (number) {
       return number <= this.min
         ? this.min
         : number >= this.max
-        ? this.max
-        : number;
-    },
-  },
-};
+          ? this.max
+          : number
+    }
+  }
+}
 </script>

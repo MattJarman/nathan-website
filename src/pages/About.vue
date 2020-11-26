@@ -110,29 +110,29 @@ query {
 </page-query>
 
 <script>
-import Experience from "@/components/Experience";
-import Skills from "@/components/Skills";
+import Experience from '@/components/Experience'
+import Skills from '@/components/Skills'
 
 export default {
   metaInfo: {
-    title: 'About Me',
+    title: 'About Me'
   },
   name: 'About',
   components: {
     Experience,
-    Skills,
+    Skills
   },
   methods: {
-    scrollToTop() {
+    scrollToTop () {
       if (process.isClient) {
-        document.body.scrollTop = document.documentElement.scrollTop = 0;
+        document.body.scrollTop = document.documentElement.scrollTop = 0
 
         // Removes any hashtag routes from the URL
-        history.pushState("", document.title, window.location.pathname);
+        history.pushState('', document.title, window.location.pathname)
       }
-    },
-  },
-};
+    }
+  }
+}
 </script>
 
 <style scoped>
