@@ -22,8 +22,8 @@ query {
 </static-query>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
-import SocialLinks from "@/components/SocialLinks.vue";
+import Navbar from '@/components/Navbar.vue';
+import SocialLinks from '@/components/SocialLinks.vue';
 
 export default {
   components: {
@@ -35,8 +35,8 @@ export default {
       title: this.$static.metadata.siteName,
       meta: [
         {
-          key: "description",
-          name: "description",
+          key: 'description',
+          name: 'description',
           content: this.$static.metadata.siteDescription,
         },
       ],
@@ -46,15 +46,15 @@ export default {
     this.updateVh();
   },
   created() {
-    window.addEventListener("resize", this.updateVh);
+    window.addEventListener('resize', this.updateVh);
   },
   beforeDestroy() {
-    window.removeEventListener("resize", this.updateVh);
+    window.removeEventListener('resize', this.updateVh);
   },
   methods: {
     updateVh() {
       const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
     },
   },
 };

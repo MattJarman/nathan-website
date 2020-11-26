@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Tab",
+  name: 'Tab',
   props: {
     name: {
       type: String,
@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     href() {
-      return "#" + this.name.toLowerCase().replace(/ /g, "-");
+      return '#' + this.name.toLowerCase().replace(/ /g, '-');
     },
   },
   mounted() {

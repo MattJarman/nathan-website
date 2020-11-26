@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: "Tabs",
+  name: 'Tabs',
   data() {
     return {
       tabs: [],

@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: "ReadMore",
+  name: 'ReadMore',
   props: {
     text: {
       type: String,
@@ -63,7 +63,7 @@ export default {
       return this.text.length > this.maxCharacters;
     },
     shortenedText() {
-      return this.text.slice(0, this.maxCharacters) + "...";
+      return this.text.slice(0, this.maxCharacters) + '...';
     },
   },
   methods: {
@@ -74,24 +74,24 @@ export default {
       const { innerWidth } = window;
 
       if (innerWidth < this.breakpoints.xs) {
-        return "xs";
+        return 'xs';
       } else if (
         innerWidth >= this.breakpoints.xs &&
         innerWidth < this.breakpoints.sm
       ) {
-        return "sm";
+        return 'sm';
       } else if (
         innerWidth >= this.breakpoints.sm &&
         innerWidth < this.breakpoints.md
       ) {
-        return "md";
+        return 'md';
       } else if (
         innerWidth >= this.breakpoints.md &&
         innerWidth < this.breakpoints.lg
       ) {
-        return "lg";
+        return 'lg';
       } else {
-        return "xl";
+        return 'xl';
       }
     },
     setMaxCharacters() {
@@ -102,7 +102,7 @@ export default {
         return;
       }
 
-      if (Object.prototype.hasOwnProperty.call(this.characters, "default")) {
+      if (Object.prototype.hasOwnProperty.call(this.characters, 'default')) {
         this.maxCharacters = this.characters.default;
       }
     },

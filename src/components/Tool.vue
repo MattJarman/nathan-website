@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "Tool",
+  name: 'Tool',
   props: {
     icon: {
       type: Array,

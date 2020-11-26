@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import ExpandableImage from "@/components/ExpandableImage";
+import ExpandableImage from '@/components/ExpandableImage';
 export default {
-  name: "Photos",
+  name: 'Photos',
   components: {
     ExpandableImage,
   },

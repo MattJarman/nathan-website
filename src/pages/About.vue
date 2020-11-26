@@ -115,9 +115,9 @@ import Skills from "@/components/Skills";
 
 export default {
   metaInfo: {
-    title: "About Me",
+    title: 'About Me',
   },
-  name: "About",
+  name: 'About',
   components: {
     Experience,
     Skills,

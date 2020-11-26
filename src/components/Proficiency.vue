@@ -16,7 +16,7 @@
 
 <script>
 export default {
-  name: "Skill",
+  name: 'Skill',
   data() {
     return {
       max: 100,

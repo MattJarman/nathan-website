@@ -55,7 +55,7 @@
 import ReadMore from "@/components/ReadMore";
 
 export default {
-  name: "Video",
+  name: 'Video',
   props: {
     title: {
       type: String,

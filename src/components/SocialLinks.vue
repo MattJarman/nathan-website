@@ -47,7 +47,7 @@
 
 <script>
 export default {
-  name: "SocialLinks",
+  name: 'SocialLinks',
 };
 </script>
 

@@ -112,7 +112,7 @@
 
 <script>
 export default {
-  name: "Navbar",
+  name: 'Navbar',
   data() {
     return {
       isMenuOpen: false,
