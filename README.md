@@ -9,20 +9,20 @@ To run this project, you'll need [Git](https://git-scm.com/downloads) [Node.js](
 accompanying [CMS](https://github.com/MattJarman/nathan-cms) 
 
 ### 1. Clone the project and CMS
-```shell
+```s
 $ git clone https://github.com/MattJarman/nathan-website.git
 $ git clone https://github.com/MattJarman/nathan-cms.git
 
 ```
 
 ### 2. Set up the CMS
-```shell
+```
 $ cd nathan-cms 
 $ npm i
 ```
 
 ### 3. Run the CMS
-```shell
+```
 $ npm run develop
 ```
 
@@ -59,14 +59,14 @@ You'll need to create at least one item in each collection for the site to build
 create an admin account, and create items for each collection you can see (for more information, see [here](https://strapi.io/documentation/3.0.0-beta.x/getting-started/quick-start-tutorial.html#_6-manage-and-add-content-to-a-restaurant-collection-type)).
 
 ### 5. Set up the website
-```shell
+```
 $ cd ../nathan-website 
 $ npm i
 $ cp .env.example .env
 ```
 
 ### 6. Run the website
-```shell
+```
 $ npm run develop
 ```
 
