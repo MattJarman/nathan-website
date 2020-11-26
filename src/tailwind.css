@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+
+.title {
+    @apply pl-2 text-2xl font-bold border-l-4 border-green-600 text-green-500 md:text-3xl lg:text-5xl lg:pl-4 lg:border-l-4;
+}
+
+.height-screen {
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+.height-screen-minus-nav {
+    height: calc(var(--vh, 1vh) * 100 - 4rem);
+}
+
+.rich-text > h1 {
+    @apply leading-relaxed text-3xl font-bold;
+}
+
+.rich-text > h2 {
+    @apply leading-relaxed text-3xl font-bold;
+}
+.rich-text > ul {
+    @apply list-disc ml-8;
+}
+
+.rich-text > a {
+    @apply text-green-500;
+}
+
+.rich-text > p > a {
+    @apply text-green-500;
+}
+
