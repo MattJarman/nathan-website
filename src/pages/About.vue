@@ -124,10 +124,12 @@ export default {
   },
   methods: {
     scrollToTop() {
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
+      if (process.isClient) {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
 
-      // Removes any hashtag routes from the URL
-      history.pushState("", document.title, window.location.pathname);
+        // Removes any hashtag routes from the URL
+        history.pushState("", document.title, window.location.pathname);
+      }
     },
   },
 };

@@ -46,15 +46,21 @@ export default {
     this.updateVh();
   },
   created() {
-    window.addEventListener('resize', this.updateVh);
+    if (process.isClient) {
+      window.addEventListener('resize', this.updateVh);
+    }
   },
   beforeDestroy() {
-    window.removeEventListener('resize', this.updateVh);
+    if (process.isClient) {
+      window.removeEventListener('resize', this.updateVh);
+    }
   },
   methods: {
     updateVh() {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      if (process.isClient) {
+        const vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+      }
     },
   },
 };

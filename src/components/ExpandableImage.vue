@@ -68,10 +68,14 @@ export default {
     };
   },
   created() {
-    window.addEventListener('keydown', this.processKey);
+    if (process.isClient) {
+      window.addEventListener('keydown', this.processKey);
+    }
   },
   beforeDestroy() {
-    window.removeEventListener('keydown', this.processKey);
+    if (process.isClient) {
+      window.removeEventListener('keydown', this.processKey);
+    }
   },
   methods: {
     processKey(e) {
