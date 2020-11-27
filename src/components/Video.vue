@@ -42,7 +42,7 @@
         </div>
         <a :href="link" target="_blank">
           <font-awesome-icon
-            class="text-sm text-gray-200"
+            class="text-sm text-gray-100"
             :icon="['fa', 'external-link-alt']"
           />
         </a>

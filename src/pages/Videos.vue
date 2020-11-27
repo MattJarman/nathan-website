@@ -13,7 +13,7 @@
             :title="video.node.title"
             :description="video.node.description"
             :embed="video.node.embed"
-            :link="video.node.link"
+            :link="video.node.externalLink"
             :tags="video.node.tags"
           />
         </div>
