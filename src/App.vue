@@ -26,6 +26,7 @@ import Navbar from '@/components/Navbar.vue'
 import SocialLinks from '@/components/SocialLinks.vue'
 
 export default {
+  name: 'App',
   components: {
     Navbar,
     SocialLinks

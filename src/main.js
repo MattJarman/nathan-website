@@ -1,5 +1,5 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUser } from '@fortawesome/free-regular-svg-icons'
+import { faUser, faImage } from '@fortawesome/free-regular-svg-icons'
 import { faFacebookSquare, faLinkedin, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'
 import { faExternalLinkAlt, faAngleDown, faAngleUp, faCamera, faVideo, faFileAlt, faHome, faTv } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -21,7 +21,8 @@ export default function (Vue, { router, head, isClient }) {
     faFileAlt,
     faHome,
     faTv,
-    faUser
+    faUser,
+    faImage
   )
 
   // Layouts
