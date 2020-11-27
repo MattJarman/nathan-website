@@ -5,7 +5,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Karla', 'sans-serif']
+      sans: ['Nunito', 'sans-serif']
     },
     aspectRatio: {
       none: 0,

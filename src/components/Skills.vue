@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full lg:py-6">
+  <div class="">
     <div class="w-full">
       <h1
         class="mb-2 text-2xl font-medium text-gray-900 sm:text-4xl title-font"
@@ -34,7 +34,7 @@
         Tools
       </p>
       <div
-        class="flex flex-col flex-grow w-full mb-16 text-xs leading-relaxed h-1/3 lg:mb-64 md:text-base"
+        class="flex flex-col flex-grow w-full text-xs leading-relaxed h-1/3 md:text-base"
       >
         <tool
           :icon="['fa', 'camera']"
