@@ -2,7 +2,7 @@
   <Layout>
     <section
       id="about-me"
-      class="flex flex-col height-screen-minus-nav lg:h-view"
+      class="flex flex-col h-view-minus-nav"
     >
       <div class="container flex flex-col flex-grow mx-auto">
         <div class="w-full">
@@ -69,7 +69,7 @@
         </a>
       </div>
     </section>
-    <section id="experience" class="flex flex-col height-screen">
+    <section id="experience" class="flex flex-col h-view">
       <div class="container flex-grow pt-4 mx-auto">
         <experience />
       </div>
@@ -82,7 +82,7 @@
         </a>
       </div>
     </section>
-    <section id="skills" class="flex flex-col height-screen">
+    <section id="skills" class="flex flex-col h-view">
       <div class="container flex-grow mx-auto">
         <skills />
       </div>
@@ -122,7 +122,29 @@ export default {
     Experience,
     Skills
   },
+  mounted () {
+    this.updateViewportHeight()
+  },
+  created () {
+    if (process.isClient) {
+      window.addEventListener('resize', this.updateViewportHeight)
+    }
+  },
+  beforeDestroy () {
+    if (process.isClient) {
+      window.removeEventListener('resize', this.updateViewportHeight)
+    }
+  },
   methods: {
+    updateViewportHeight () {
+      if (process.isClient) {
+        const windowHeight = window.innerHeight
+        const headerHeight = document.getElementById('nav').clientHeight
+
+        document.documentElement.style.setProperty('--navbarHeight', `${headerHeight}px`)
+        document.documentElement.style.setProperty('--viewportHeight', `${windowHeight}px`)
+      }
+    },
     scrollToTop () {
       if (process.isClient) {
         document.body.scrollTop = document.documentElement.scrollTop = 0
@@ -136,7 +158,20 @@ export default {
 </script>
 
 <style scoped>
+:root {
+  --viewportHeight: 100vh;
+  --navbarHeight: 0vh;
+}
+
 .rich-text >>> a {
   @apply text-green-500;
+}
+
+.h-view {
+  height: var(--viewportHeight, 100vh);
+}
+
+.h-view-minus-nav {
+  height: calc(var(--viewportHeight, 100vh) - var(--navbarHeight, 0vh));
 }
 </style>

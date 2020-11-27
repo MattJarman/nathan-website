@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Padded>
     <p class="mb-8 title lg:mb-16">Photos</p>
     <div class="gap-1 mb-4 masonry sm:gap-2">
       <expandable-image
@@ -9,7 +9,7 @@
         class="mb-1 shadow-md sm:mb-2"
       />
     </div>
-  </Layout>
+  </Padded>
 </template>
 
 <script>

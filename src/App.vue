@@ -1,6 +1,6 @@
 <template>
-  <div id="app">
-    <header>
+  <div id="app" class="min-h-full">
+    <header id="nav">
       <navbar />
     </header>
     <transition name="fade-slide" mode="out-in" appear>
@@ -41,34 +41,14 @@ export default {
         }
       ]
     }
-  },
-  mounted () {
-    this.updateVh()
-  },
-  created () {
-    if (process.isClient) {
-      window.addEventListener('resize', this.updateVh)
-    }
-  },
-  beforeDestroy () {
-    if (process.isClient) {
-      window.removeEventListener('resize', this.updateVh)
-    }
-  },
-  methods: {
-    updateVh () {
-      if (process.isClient) {
-        const vh = window.innerHeight * 0.01
-        document.documentElement.style.setProperty('--vh', `${vh}px`)
-      }
-    }
   }
 }
 </script>
 
 <style>
-html {
+html, body {
   scroll-behavior: smooth;
+  @apply h-full;
 }
 
 #app {

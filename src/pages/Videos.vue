@@ -1,5 +1,5 @@
 <template>
-  <Layout>
+  <Padded>
     <div class="mb-16 lg:mb-0">
       <p class="px-2 mb-8 title lg:mb-16">Videos</p>
       <div class="flex flex-wrap -mx-2">
@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-  </Layout>
+  </Padded>
 </template>
 
 <page-query>
