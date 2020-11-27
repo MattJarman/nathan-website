@@ -44,6 +44,9 @@ import Video from '@/components/Video'
 
 export default {
   name: 'Videos',
+  metaInfo: {
+    title: 'Videos'
+  },
   components: { Video },
   methods: {
     getGradient (index) {

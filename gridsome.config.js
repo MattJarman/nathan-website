@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'Nathan Ellerton',
   plugins: [
     {
       use: 'gridsome-plugin-tailwindcss'

@@ -16,6 +16,9 @@
 import ExpandableImage from '@/components/ExpandableImage'
 export default {
   name: 'Photos',
+  metaInfo: {
+    title: 'Photos'
+  },
   components: {
     ExpandableImage
   }
