@@ -18,7 +18,12 @@
 .rich-text > h2 {
     @apply leading-relaxed text-3xl font-bold;
 }
+
 .rich-text > ul {
+    @apply list-disc ml-8;
+}
+
+.rich-text > p > ul {
     @apply list-disc ml-8;
 }
 

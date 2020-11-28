@@ -1,15 +1,7 @@
 <template>
   <div class="w-full lg:py-6">
-    <div class="w-full mb-6 lg:mb-12">
-      <h1
-        class="mb-2 text-2xl font-medium text-gray-900 sm:text-4xl title-font"
-      >
-        Where I've Worked
-      </h1>
-      <div class="w-20 h-1 bg-green-500 rounded"></div>
-    </div>
-    <div class="flex justify-center w-full">
-      <tabs class="w-full md:w-1/2">
+    <div class="flex justify-center items-center w-full">
+      <tabs class="w-full">
         <tab
           v-for="(experience, index) in $static.experience.edges"
           :key="experience.node.id"
@@ -17,13 +9,13 @@
           :selected="index === 0"
           class="md:py-8"
         >
-          <p class="text-xl leading-relaxed md:text-3xl">
+          <p class="text-2xl leading-relaxed font-bold md:text-3xl lg:text-4xl">
             {{ experience.node.title }}
           </p>
-          <p class="mb-4 text-sm leading-relaxed text-gray-600 md:text-xl">
+          <p class="mb-4 text-sm leading-relaxed text-gray-600 italic md:text-xl">
             {{ experience.node.date }}
           </p>
-          <div class="rich-text" v-html="experience.node.description" />
+          <div class="rich-text text-xs md:text-sm lg:text-base" v-html="experience.node.description" />
         </tab>
       </tabs>
     </div>
