@@ -46,11 +46,13 @@
       class="w-full h-auto rounded-md shadow-md cursor-pointer"
       @click="toggleExpanded"
       :src="image.small.url"
+      :width="image.small.width.toString()"
+      :height="image.small.height.toString()"
       v-bind="$attrs"
       alt=""
     />
   </div>
-</template>\
+</template>
 
 <script>
 import { mixin as clickaway } from 'vue-clickaway'
