@@ -1,9 +1,6 @@
 <template>
   <Layout>
-    <section
-      id="about-me"
-      class="flex flex-col h-view-minus-nav"
-    >
+    <section id="about-me" class="flex flex-col h-view-minus-nav">
       <div class="container flex flex-col flex-grow mx-auto">
         <div class="w-full">
           <h1 class="text-2xl font-medium text-gray-900 sm:text-4xl title-font">
@@ -42,8 +39,8 @@
                 class="mb-4 text-xs leading-relaxed rich-text md:text-base lg:text-lg"
                 v-html="$page.about.description"
               ></div>
-              <a class="inline-flex items-center text-green-500"
-                >Learn More
+              <a class="inline-flex items-center text-green-500">
+                Learn More
                 <svg
                   fill="none"
                   stroke="currentColor"
@@ -61,12 +58,12 @@
         </div>
       </div>
       <div class="flex items-center justify-center mb-6 lg:mb-0">
-        <a class="focus:outline-none" href="#experience">
+        <span class="focus:outline-none cursor-pointer" @click="scrollTo('experience')">
           <font-awesome-icon
             class="text-5xl text-green-500 animate-bounce"
             :icon="['fa', 'angle-down']"
           />
-        </a>
+        </span>
       </div>
     </section>
     <section id="experience" class="flex flex-col h-view">
@@ -74,12 +71,12 @@
         <experience />
       </div>
       <div class="flex items-center justify-center mb-6 lg:mb-0">
-        <a href="#skills">
+        <span class="focus:outline-none cursor-pointer"  @click="scrollTo('skills')">
           <font-awesome-icon
             class="text-5xl text-green-500 animate-bounce"
             :icon="['fa', 'angle-down']"
           />
-        </a>
+        </span>
       </div>
     </section>
     <section id="skills" class="flex flex-col h-view">
@@ -151,6 +148,17 @@ export default {
 
         // Removes any hashtag routes from the URL
         history.pushState('', document.title, window.location.pathname)
+      }
+    },
+    scrollTo (id) {
+      if (process.isClient) {
+        const element = document.getElementById(id)
+
+        if (!element) {
+          return
+        }
+
+        element.scrollIntoView()
       }
     }
   }
