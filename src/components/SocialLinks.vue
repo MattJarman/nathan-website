@@ -67,7 +67,7 @@ export default {
 }
 
 .social-icon {
-  @apply text-gray-900;
+  @apply text-gray-800;
 }
 
 .social-link {
@@ -77,7 +77,7 @@ export default {
 }
 
 .social-icon:hover {
-  @apply text-green-600;
+  @apply text-green-500;
 }
 
 .social-link:hover {
