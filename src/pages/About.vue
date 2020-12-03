@@ -166,10 +166,10 @@ export default {
 }
 
 .h-view {
-  height: var(--viewportHeight, 100vh);
+  min-height: var(--viewportHeight, 100vh);
 }
 
 .h-view-minus-nav {
-  height: calc(var(--viewportHeight, 100vh) - var(--navbarHeight, 0vh));
+  min-height: calc(var(--viewportHeight, 100vh) - var(--navbarHeight, 0vh));
 }
 </style>
