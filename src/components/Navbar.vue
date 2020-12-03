@@ -7,7 +7,10 @@
           <div class="flex justify-start lg:w-0 lg:flex-1">
             <g-link to="/">
               <span class="sr-only">Home</span>
-              <span class="text-4xl md:text-6xl font-bold text-green-500">N</span>
+              <svg class="w-8 h-8 fill-current text-green-500" id="a9528a82-5725-4f19-87ef-5a5b945e3d16" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                   viewBox="0 0 300 300">
+                <path class="b3dc968a-1a88-4449-b68e-87bd7016d67f" d="M274.8.45V300H220.09L89.77,111.47H87.58V300H24.25V.45H79.83l129.3,188.39h2.63V.45Z"/>
+              </svg>
             </g-link>
           </div>
           <div class="-mr-2 -my-2 md:hidden">
@@ -78,7 +81,10 @@
               <div class="flex items-center justify-between">
                 <g-link to="/">
                   <span class="sr-only">Home</span>
-                  <p class="text-4xl md:text-6xl font-bold text-green-500">N</p>
+                  <svg class="w-6 h-6 fill-current text-green-500" id="a9528a82-5725-4f19-87ef-5a5b945e3d16" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+                       viewBox="0 0 300 300">
+                    <path class="b3dc968a-1a88-4449-b68e-87bd7016d67f" d="M274.8.45V300H220.09L89.77,111.47H87.58V300H24.25V.45H79.83l129.3,188.39h2.63V.45Z"/>
+                  </svg>
                 </g-link>
                 <div class="-mr-2">
                   <button type="button" @click="toggleMenu"
