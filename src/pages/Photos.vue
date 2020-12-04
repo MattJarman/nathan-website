@@ -49,35 +49,3 @@ query {
   }
 }
 </page-query>
-
-<style scoped>
-.masonry {
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
-}
-
-@screen sm {
-  .masonry {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-  }
-}
-
-@screen md {
-  .masonry {
-    -webkit-column-count: 4;
-    -moz-column-count: 4;
-    column-count: 4;
-  }
-}
-
-@screen xl {
-  .masonry {
-    -webkit-column-count: 6;
-    -moz-column-count: 6;
-    column-count: 6;
-  }
-}
-</style>
