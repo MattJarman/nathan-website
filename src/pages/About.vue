@@ -138,7 +138,7 @@ export default {
     },
     scrollToTop () {
       if (process.isClient) {
-        document.body.scrollTop = document.documentElement.scrollTop = 0
+        window.scroll({ top: 0, behavior: 'smooth' })
 
         // Removes any hashtag routes from the URL
         history.pushState('', document.title, window.location.pathname)
@@ -152,7 +152,7 @@ export default {
           return
         }
 
-        element.scrollIntoView()
+        element.scrollIntoView({ behavior: 'smooth' })
       }
     }
   }

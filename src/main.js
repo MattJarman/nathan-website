@@ -1,8 +1,18 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUser, faImage } from '@fortawesome/free-regular-svg-icons'
-import { faFacebookSquare, faLinkedin, faInstagram, faYoutube } from '@fortawesome/free-brands-svg-icons'
-import { faExternalLinkAlt, faAngleDown, faAngleUp, faCamera, faVideo, faFileAlt, faHome, faTv } from '@fortawesome/free-solid-svg-icons'
+import { faImage, faUser } from '@fortawesome/free-regular-svg-icons'
+import { faFacebookSquare, faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import {
+  faAngleDown,
+  faAngleUp,
+  faCamera,
+  faExternalLinkAlt,
+  faFileAlt,
+  faHome,
+  faTv,
+  faVideo
+} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import smoothscroll from 'smoothscroll-polyfill'
 import DefaultLayout from '~/layouts/Default.vue'
 import PaddedLayout from '~/layouts/Padded.vue'
 import '~/tailwind.css'
@@ -24,6 +34,10 @@ export default function (Vue, { router, head, isClient }) {
     faUser,
     faImage
   )
+
+  if (process.isClient) {
+    smoothscroll.polyfill()
+  }
 
   // Layouts
   Vue.component('Layout', DefaultLayout)
