@@ -1,7 +1,7 @@
 <template>
   <div>
-    <nav>
-      <div class="flex mb-4 overflow-x-auto">
+    <nav class="mb-4">
+      <div class="flex mb-4 overflow-x-auto items-center justify-center">
         <a
           v-for="tab in tabs"
           class="flex-grow flex-shrink-0 px-1 py-4 text-sm text-center truncate border-b-2 cursor-pointer tab hover:bg-gray-100"
@@ -18,7 +18,7 @@
       </div>
     </nav>
 
-    <div class="tabs-details">
+    <div class="tabs-details flex flex-col flex-1 flex-grow">
       <slot></slot>
     </div>
   </div>

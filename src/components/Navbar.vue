@@ -42,21 +42,21 @@
             <g-link
                 to="/photos"
                 class="text-xl font-medium text-gray-500 hover:text-gray-900"
-                exact-active-class="text-green-500"
+                active-class="text-green-500"
             >
               Photos
             </g-link>
             <g-link
                 to="/videos"
                 class="text-xl font-medium text-gray-500 hover:text-gray-900"
-                exact-active-class="text-green-500"
+                active-class="text-green-500"
             >
               Videos
             </g-link>
             <g-link
                 to="/about"
                 class="text-xl font-medium text-gray-500 hover:text-gray-900"
-                exact-active-class="text-green-500"
+                active-class="text-green-500"
             >
               About
             </g-link>

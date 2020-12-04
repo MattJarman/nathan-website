@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   purge: [
     './src/**/*.html',
@@ -15,6 +17,13 @@ module.exports = {
       '21/9': [21, 9]
     },
     extend: {
+      colors: {
+        lime: colors.lime,
+        cyan: colors.cyan,
+        orange: colors.orange,
+        'light-blue': colors.lightBlue,
+        fuchsia: colors.fuchsia
+      },
       margin: {
         14: '3.5rem'
       },
@@ -25,11 +34,6 @@ module.exports = {
         '1/4': '25%',
         '1/2': '50%',
         '9/10': '90%'
-      },
-      height: {
-        // This is for when we want the content to stretch the entire viewport height, excluding headers and footers
-        'view-m': 'calc(100vh - 6rem)',
-        view: 'calc(100vh - 8rem)'
       },
       maxHeight: {
         0: '0',

@@ -9,7 +9,7 @@
           :selected="index === 0"
           class="md:py-8"
         >
-          <p class="text-2xl leading-relaxed font-bold md:text-3xl lg:text-4xl">
+          <p class="text-2xl leading-relaxed font-bold md:text-3xl lg:text-4xl truncate">
             {{ experience.node.title }}
           </p>
           <p class="mb-4 text-sm leading-relaxed text-gray-600 italic md:text-xl">
@@ -47,6 +47,21 @@ export default {
   components: {
     Tab,
     Tabs
+  },
+  methods: {
+    getGradient (index) {
+      const repetitions = 3
+      const position = index % repetitions
+
+      switch (position) {
+        case 0:
+          return 'from-green-400 to-cyan-500 rotate-1'
+        case 1:
+          return 'from-orange-400 to-pink-600 -rotate-1'
+        case 2:
+          return 'from-fuchsia-500 to-purple-600 rotate-1'
+      }
+    }
   }
 }
 </script>
