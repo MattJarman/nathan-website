@@ -22,7 +22,10 @@ module.exports = {
         cyan: colors.cyan,
         orange: colors.orange,
         'light-blue': colors.lightBlue,
-        fuchsia: colors.fuchsia
+        fuchsia: colors.fuchsia,
+        'oxford-blue': {
+          DEFAULT: '#161B33'
+        }
       },
       margin: {
         14: '3.5rem'

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed bottom-0 z-0 flex flex-row items-center justify-center w-full h-8 space-x-3 bg-white social-links lg:h-auto lg:w-0 lg:flex-col lg:space-x-0 lg:space-y-3 lg:ml-16 lg:items-center lg:pb-0"
+    class="fixed bottom-0 z-50 flex flex-row items-center justify-center w-full h-8 space-x-3 bg-white social-links lg:h-auto lg:w-0 lg:flex-col lg:space-x-0 lg:space-y-3 lg:ml-16 lg:items-center lg:pb-0"
   >
     <a
       class="social-link"
