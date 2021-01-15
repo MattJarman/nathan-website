@@ -8,7 +8,7 @@
 
 
 .title {
-    @apply pl-2 text-2xl font-bold border-l-4 border-green-600 text-green-500 md:text-3xl lg:text-5xl lg:pl-4 lg:border-l-4;
+    @apply font-bold bg-gradient-to-r from-green-400 to-cyan-500 bg-clip-text text-transparent;
 }
 
 .rich-text > h1 {

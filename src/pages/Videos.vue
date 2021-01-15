@@ -1,8 +1,8 @@
 <template>
   <Padded>
     <div class="mb-16 lg:mb-0">
-      <div class="flex flex-col items-center pb-8">
-        <p class="text-lg md:text-3xl font-bold text-green-400 mb-1 border-2 md:border-4 border-green-400 p-2 bg-gray-800 shadow-lg">VIDEOS</p>
+      <div class="mb-8 text-center">
+        <p class="text-5xl md:text-7xl title text-center inline-block">Videos.</p>
       </div>
       <div class="flex flex-wrap -mx-2">
         <div
