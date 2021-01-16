@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'Default'
 }
 </script>
 
@@ -17,25 +17,3 @@ query {
   }
 }
 </static-query>
-
-<style>
-#app {
-  overflow: hidden;
-}
-
-.fade-slide-enter,
-.fade-slide-leave-to {
-  opacity: 0;
-  transform: translateX(-2em);
-  width: inherit;
-}
-
-.fade-slide-enter-active {
-  transition-delay: 0.25s;
-}
-
-.fade-slide-enter-active,
-.fade-slide-leave-active {
-  transition: all 0.3s ease;
-}
-</style>

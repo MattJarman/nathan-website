@@ -43,14 +43,16 @@
       </div>
     </transition>
     <g-image
-      class="w-full h-auto rounded-md shadow-md cursor-pointer"
+      class="w-full h-auto rounded-md shadow-md cursor-pointer object-cover h-full w-full"
       @click="toggleExpanded"
       :src="image.small.url"
+      :width="image.small.width.toString()"
+      :height="image.small.height.toString()"
       v-bind="$attrs"
       alt=""
     />
   </div>
-</template>\
+</template>
 
 <script>
 import { mixin as clickaway } from 'vue-clickaway'

@@ -1,18 +1,18 @@
 <template>
-  <Layout>
+  <Padded>
     <div class="px-6 pt-12 sm:pt-48">
-      <p class="text-sm sm:text-2xl">Hey, I'm Nathan.</p>
-      <p class="text-2xl font-bold sm:text-6xl">This is a placeholder.</p>
-      <p class="mb-2 text-sm sm:text-xl">
-        This is also a placeholder? <span class="text-teal-600">Example.</span>
-      </p>
+      <p class="mb-1 text-4xl font-bold sm:text-6xl">Nathan Ellerton</p>
+      <p class="text-gray-600 text-xs sm:text-xl">Freelance Photographer | Videographer </p>
     </div>
-  </Layout>
+  </Padded>
 </template>
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  metaInfo: {
+    title: 'Home'
+  }
 }
 </script>
 

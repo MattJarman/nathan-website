@@ -1,7 +1,9 @@
 <template>
-  <Layout>
+  <Padded class="mb-16 md:mb-0">>
     <div class="mb-16 lg:mb-0">
-      <p class="px-2 mb-8 title lg:mb-16">Videos</p>
+      <div class="mb-8">
+        <p class="text-5xl md:text-7xl title inline-block">Videos</p>
+      </div>
       <div class="flex flex-wrap -mx-2">
         <div
           v-for="(video, index) in $page.videos.edges"
@@ -13,13 +15,13 @@
             :title="video.node.title"
             :description="video.node.description"
             :embed="video.node.embed"
-            :link="video.node.link"
+            :link="video.node.externalLink"
             :tags="video.node.tags"
           />
         </div>
       </div>
     </div>
-  </Layout>
+  </Padded>
 </template>
 
 <page-query>
@@ -44,6 +46,9 @@ import Video from '@/components/Video'
 
 export default {
   name: 'Videos',
+  metaInfo: {
+    title: 'Videos'
+  },
   components: { Video },
   methods: {
     getGradient (index) {
