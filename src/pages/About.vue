@@ -70,7 +70,7 @@
     </section>
     <section id="experience" class="flex flex-col items-center min-h-view">
       <div class="content flex-grow my-12 px-4 px-4 sm:px-16 lg:px-32 xl:px-64 2xl:px-96 container mx-auto">
-        <p class="text-4xl lg:text-5xl font-bold text-green-500 mb-8">Experience</p>
+        <p class="text-4xl lg:text-5xl font-bold text-green-500 mb-16">Experience</p>
         <div class="text-gray-600 body-font">
           <div class="container px-5 mx-auto flex flex-wrap">
             <div
