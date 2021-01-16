@@ -7,6 +7,7 @@ module.exports = function (api) {
     const videos = await axios.get(`${process.env.STRAPI_URL}/videos`)
     const skills = await axios.get(`${process.env.STRAPI_URL}/skills`)
     const experiences = await axios.get(`${process.env.STRAPI_URL}/experiences`)
+    const socials = await axios.get(`${process.env.STRAPI_URL}/socials`)
 
     // Single types
     const about = await axios.get(`${process.env.STRAPI_URL}/about`)
@@ -25,6 +26,10 @@ module.exports = function (api) {
 
     const experiencesCollection = addCollection({
       typeName: 'experience'
+    })
+
+    const socialsCollection = addCollection({
+      typeName: 'socials'
     })
 
     const aboutCollection = addCollection({
@@ -81,8 +86,16 @@ module.exports = function (api) {
         id: item.id,
         name: item.name,
         title: item.title,
-        date: item.dateRange,
+        yearEnd: item.yearEnd,
         description: item.description
+      })
+    }
+
+    for (const item of socials.data) {
+      socialsCollection.addNode({
+        id: item.id,
+        url: item.url,
+        icon: item.icon
       })
     }
 

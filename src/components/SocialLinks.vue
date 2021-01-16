@@ -3,51 +3,72 @@
     class="fixed bottom-0 z-50 flex flex-row items-center justify-center w-full h-8 space-x-3 bg-white social-links lg:h-auto lg:w-0 lg:flex-col lg:space-x-0 lg:space-y-3 lg:ml-16 lg:items-center lg:pb-0"
   >
     <a
+      v-for="social in this.socials"
+      :key="social.id"
       class="social-link"
-      href="https://www.facebook.com/NathanJEllerton"
+      :href="social.url"
       target="_blank"
     >
       <font-awesome-icon
         class="text-xl social-icon md:text-2xl"
-        :icon="['fab', 'facebook-square']"
-      />
-    </a>
-    <a
-      class="social-link"
-      href="https://www.linkedin.com/in/nathanjellerton"
-      target="_blank"
-    >
-      <font-awesome-icon
-        class="text-xl social-icon md:text-2xl"
-        :icon="['fab', 'linkedin']"
-      />
-    </a>
-    <a
-      class="social-link"
-      href="https://www.instagram.com/nathanjellerton"
-      target="_blank"
-    >
-      <font-awesome-icon
-        class="text-xl social-icon md:text-2xl"
-        :icon="['fab', 'instagram']"
-      />
-    </a>
-    <a
-      class="social-link"
-      href="https://www.youtube.com/c/NathanJEllerton"
-      target="_blank"
-    >
-      <font-awesome-icon
-        class="text-xl social-icon md:text-2xl"
-        :icon="['fab', 'youtube']"
+        :icon="social.icon"
       />
     </a>
   </div>
 </template>
 
+<static-query>
+query {
+  socials: allSocials(sortBy: "id", order: ASC) {
+    edges {
+      node {
+        id
+        url
+        icon
+      }
+    }
+  }
+}
+</static-query>
+
 <script>
 export default {
-  name: 'SocialLinks'
+  name: 'SocialLinks',
+  computed: {
+    socials () {
+      return this.$static.socials.edges
+        .map(edge => {
+          const faIcon = this.mapSocialFaIcon(edge.node.icon)
+
+          if (faIcon) {
+            return {
+              id: edge.node.id,
+              url: edge.node.url,
+              icon: faIcon
+            }
+          }
+
+          return false
+        })
+        .filter(social => social.icon)
+    }
+  },
+  methods: {
+    mapSocialFaIcon (social) {
+      switch (social) {
+        case 'facebook':
+          return ['fab', 'facebook-square']
+        case 'linkedin':
+          return ['fab', 'linkedin']
+        case 'instagram':
+          return ['fab', 'instagram']
+        case 'youtube':
+          return ['fab', 'youtube']
+        default:
+          return false
+      }
+    }
+  }
 }
 </script>
 
@@ -55,10 +76,8 @@ export default {
 @screen lg {
   .social-links:after {
     content: "";
-    display: block;
     width: 2px;
-    @apply h-24;
-    @apply bg-gray-900;
+    @apply h-24 text-gray-800 md:bg-green-500 block;
   }
 
   .social-links a:last-of-type {
@@ -67,21 +86,18 @@ export default {
 }
 
 .social-icon {
-  @apply text-gray-800;
+  @apply text-gray-800 md:text-green-500;
 }
 
 .social-link {
-  @apply duration-300;
-  @apply ease-in-out;
-  @apply transform;
+  @apply transform duration-300 ease-in-out;
 }
 
 .social-icon:hover {
-  @apply text-green-500;
+  @apply text-black md:text-green-700;
 }
 
 .social-link:hover {
-  @apply -translate-y-1;
-  @apply scale-110;
+  @apply -translate-y-1 scale-110;
 }
 </style>

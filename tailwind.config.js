@@ -51,7 +51,10 @@ module.exports = {
     }
   },
   variants: {
-    aspectRatio: ['responsive']
+    aspectRatio: ['responsive'],
+    extend: {
+      margin: ['last']
+    }
   },
   plugins: [
     require('tailwindcss-responsive-embed'),

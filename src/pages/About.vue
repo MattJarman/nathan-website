@@ -53,22 +53,59 @@
       </div>
     </section>
     <section id="skills" class="skewed-container flex flex-col items-center min-h-view">
-      <div class="content my-16 px-4 sm:px-16 lg:px-32 xl:px-64 2xl:px-96 container mx-auto z-10 h-full text-white">
-        <div class="mb-16">
+      <div class="skewed-content my-16 px-4 sm:px-16 lg:px-32 xl:px-64 2xl:px-96 container mx-auto z-10 h-full text-white">
+        <div class="mb-24">
           <p class="text-4xl lg:text-5xl font-bold mb-4 text-light-blue-400">Skills</p>
-          <p class="text-xs md:text-sm lg:text-base text-gray-400">Anything useful to write here? I’m not too sure, but it does help make the space look more filled. Might be useful to include some text here? Maybe talk about some other experiences not mentioned below?</p>
         </div>
         <div class="w-full">
-          <skill class="mb-4 md:mb-6" name="Colouring" v-bind:percentage=95 />
-          <skill class="mb-4 md:mb-6" name="Editing" v-bind:percentage=90 />
-          <skill class="mb-4 md:mb-6" name="Lighting" v-bind:percentage=85 />
-          <skill class="mb-4 md:mb-6" name="Camera" v-bind:percentage=80 />
-          <skill class="mb-4 md:mb-6" name="Planning" v-bind:percentage=75 />
-          <skill class="mb-4 md:mb-6" name="Sound" v-bind:percentage="70" />
+          <skill
+              v-for="skill in $page.skills.edges"
+              :key="skill.node.id"
+              class="mb-4 md:mb-6"
+              :name="skill.node.name"
+              v-bind:percentage=skill.node.level
+          />
         </div>
       </div>
     </section>
-    <section id="experience" class="h-view">
+    <section id="experience" class="flex flex-col items-center min-h-view">
+      <div class="content flex-grow my-12 px-4 px-4 sm:px-16 lg:px-32 xl:px-64 2xl:px-96 container mx-auto">
+        <p class="text-4xl lg:text-5xl font-bold text-green-500 mb-8">Experience</p>
+        <div class="text-gray-600 body-font">
+          <div class="container px-5 mx-auto flex flex-wrap">
+            <div
+                v-for="groupedExperience in this.groupedExperiences"
+                :key="groupedExperience.yearEnd"
+                class="flex relative pt-10 md:w-2/3 lg:w-full mx-auto"
+            >
+              <div class="flex justify-center absolute transform -rotate-90 w-16 -left-12 md:rotate-0 md:pr-8 md:w-12">
+                <span class="font-bold text-gray-400">{{groupedExperience.yearEnd}}</span>
+              </div>
+              <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+                <div class="h-full w-1 bg-green-500 pointer-events-none"></div>
+              </div>
+              <div class="flex-shrink-0 w-6 h-6 rounded-full sm:mt-0 inline-flex items-center border-4 border-green-500 bg-white text-white relative z-10 title-font font-medium text-sm"></div>
+              <div class="flex-grow pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+                <div class="flex-grow mt-3 border-t-2 border-gray-200 py-4">
+                  <div v-for="experience in groupedExperience.experiences" :key="experience.id" class="mb-8 last:mb-0">
+                    <p class="font-bold text-xl text-black md:text-3xl">{{experience.title}}</p>
+                    <p class="italic text-sm text-gray-500 mb-2">{{experience.name}}</p>
+                    <div class="text-xs leading-relaxed rich-text"  v-html="experience.description"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center justify-center mb-6 lg:mb-0">
+        <span class="focus:outline-none cursor-pointer" @click="scrollToTop">
+          <font-awesome-icon
+              class="text-5xl text-green-500 animate-bounce"
+              :icon="['fa', 'angle-up']"
+          />
+        </span>
+      </div>
     </section>
   </div>
 
@@ -81,6 +118,26 @@ query {
     title
     description
     avatar
+  }
+  skills: allSkills(sortBy: "level") {
+    edges {
+      node {
+        id
+        name
+        level
+      }
+    }
+  }
+  experience: allExperience(sortBy: "yearEnd") {
+    edges {
+      node {
+        id
+        title
+        name
+        description
+        yearEnd
+      }
+    }
   }
 }
 </page-query>
@@ -98,6 +155,34 @@ export default {
   data () {
     return {
       skewedAngle: -4
+    }
+  },
+  computed: {
+    groupedExperiences () {
+      const groupedExperiences = []
+      for (const edge of this.$page.experience.edges) {
+        const foundYearIndex = groupedExperiences.findIndex(experience => experience.yearEnd === edge.node.yearEnd)
+
+        const experience = {
+          id: edge.node.id,
+          title: edge.node.title,
+          name: edge.node.name,
+          description: edge.node.description
+        }
+
+        if (foundYearIndex !== -1) {
+          groupedExperiences[foundYearIndex].experiences.push(experience)
+
+          continue
+        }
+
+        groupedExperiences.push({
+          yearEnd: edge.node.yearEnd,
+          experiences: [experience]
+        })
+      }
+
+      return groupedExperiences
     }
   },
   mounted () {
@@ -181,20 +266,16 @@ export default {
   @apply absolute top-0 right-0 left-0 bottom-0 bg-oxford-blue
 }
 
+.skewed-content {
+  padding-top: calc(var(--skewedContentPaddingY) * 2);
+  padding-bottom: calc(var(--skewedContentPaddingY) * 2);
+}
+
 .min-h-view {
   min-height: var(--viewportHeight, 100vh);
 }
 
-.h-view {
-  height: var(--viewportHeight, 100vh);
-}
-
 .h-view-minus-nav {
   height: calc(var(--viewportHeight, 100vh) - var(--navbarHeight, 0vh));
-}
-
-.content {
-  padding-top: calc(var(--skewedContentPaddingY) * 2);
-  padding-bottom: calc(var(--skewedContentPaddingY) * 2);
 }
 </style>
