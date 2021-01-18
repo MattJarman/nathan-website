@@ -69,14 +69,14 @@
       </div>
     </section>
     <section id="experience" class="flex flex-col items-center min-h-view">
-      <div class="content flex-grow my-12 px-4 px-4 sm:px-16 lg:px-32 xl:px-64 2xl:px-96 container mx-auto">
+      <div class="content flex-grow my-12 px-4 px-4 sm:px-16 container mx-auto">
         <p class="text-4xl lg:text-5xl font-bold text-green-500 mb-16">Experience</p>
         <div class="text-gray-600 body-font">
           <div class="container px-5 mx-auto flex flex-wrap">
             <div
                 v-for="groupedExperience in this.groupedExperiences"
                 :key="groupedExperience.yearEnd"
-                class="flex relative pt-10 md:w-2/3 lg:w-full mx-auto"
+                class="flex relative pt-10 md:w-2/3 w-full mx-auto"
             >
               <div class="flex justify-center absolute transform -rotate-90 w-16 -left-12 md:rotate-0 md:pr-8 md:w-12">
                 <span class="font-bold text-gray-400">{{groupedExperience.yearEnd}}</span>
@@ -86,7 +86,7 @@
               </div>
               <div class="flex-shrink-0 w-6 h-6 rounded-full sm:mt-0 inline-flex items-center border-4 border-green-500 bg-white text-white relative z-10 title-font font-medium text-sm"></div>
               <div class="flex-grow pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                <div class="flex-grow mt-3 border-t-2 border-gray-200 py-4">
+                <div class="flex-grow w-full mt-3 border-t-2 border-gray-200 py-4">
                   <div v-for="experience in groupedExperience.experiences" :key="experience.id" class="mb-8 last:mb-0">
                     <p class="font-bold text-xl text-black md:text-3xl">{{experience.title}}</p>
                     <p class="italic text-sm text-gray-500 mb-2">{{experience.name}}</p>
