@@ -42,10 +42,10 @@
         </div>
       </div>
     </transition>
-    <g-image
-      class="w-full h-auto rounded-md shadow-md cursor-pointer object-cover h-full w-full"
+    <img
+      class="w-full rounded-md shadow-md cursor-pointer object-cover h-full"
       @click="toggleExpanded"
-      :src="image.small.url"
+      v-lazy="image.small.url"
       :width="image.small.width.toString()"
       :height="image.small.height.toString()"
       v-bind="$attrs"

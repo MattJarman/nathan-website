@@ -13,6 +13,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import smoothscroll from 'smoothscroll-polyfill'
+import VueLazyload from 'vue-lazyload'
 import DefaultLayout from '~/layouts/Default.vue'
 import PaddedLayout from '~/layouts/Padded.vue'
 import '~/tailwind.css'
@@ -38,6 +39,8 @@ export default function (Vue, { router, head, isClient }) {
   if (process.isClient) {
     smoothscroll.polyfill()
   }
+
+  Vue.use(VueLazyload)
 
   // Layouts
   Vue.component('Layout', DefaultLayout)
