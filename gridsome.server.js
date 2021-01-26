@@ -47,6 +47,8 @@ module.exports = function (api) {
       photoCollection.addNode({
         id: item.id,
         name: item.Name,
+        order: item.order ?? Number.MAX_SAFE_INTEGER,
+        published: item.published_at,
         formats: {
           original: {
             url: originalUrl,
@@ -69,7 +71,9 @@ module.exports = function (api) {
         description: item.description,
         embed: item.embedURL,
         externalLink: item.externalURL,
-        tags: item.tags
+        tags: item.tags,
+        order: item.order ?? Number.MAX_SAFE_INTEGER,
+        published: item.published_at
       })
     }
 

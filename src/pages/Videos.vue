@@ -26,7 +26,7 @@
 
 <page-query>
 query {
-  videos: allVideos(sortBy: "id", order: ASC) {
+  videos: allVideos(sort: [{ by: "order", order: ASC }, { by: "published", order: ASC }]) {
     edges {
       node {
         id
