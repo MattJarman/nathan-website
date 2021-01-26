@@ -6,7 +6,6 @@ import {
   faAngleUp,
   faCamera,
   faExternalLinkAlt,
-  faFileAlt,
   faHome,
   faTv,
   faVideo
@@ -29,7 +28,6 @@ export default function (Vue, { router, head, isClient }) {
     faAngleUp,
     faCamera,
     faVideo,
-    faFileAlt,
     faHome,
     faTv,
     faUser,

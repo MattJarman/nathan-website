@@ -1,8 +1,5 @@
 <template>
   <Padded class="mb-16 md:mb-0">
-    <div class="mb-8">
-      <p class="text-5xl md:text-7xl title inline-block">Photos</p>
-    </div>
     <div class="gap-1 mb-4 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 sm:gap-2">
       <expandable-image
         v-for="image in $page.photos.edges"

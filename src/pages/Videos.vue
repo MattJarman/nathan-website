@@ -1,9 +1,6 @@
 <template>
   <Padded class="mb-16 md:mb-0">
     <div class="mb-16 lg:mb-0">
-      <div class="mb-8">
-        <p class="text-5xl md:text-7xl title inline-block">Videos</p>
-      </div>
       <div class="flex flex-wrap -mx-2">
         <div
           v-for="(video, index) in $page.videos.edges"

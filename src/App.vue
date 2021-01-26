@@ -3,8 +3,8 @@
     <header id="nav">
       <navbar />
     </header>
-    <transition name="fade-slide" mode="out-in" appear>
-      <router-view />
+    <transition name="fade-slide" mode="out-in" type="transition" appear>
+      <router-view/>
     </transition>
     <footer>
       <social-links />
@@ -42,11 +42,43 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    this.handleResizeEvents()
+  },
+  created () {
+    if (process.isClient) {
+      window.addEventListener('resize', this.handleResizeEvents)
+    }
+  },
+  beforeDestroy () {
+    if (process.isClient) {
+      window.removeEventListener('resize', this.handleResizeEvents)
+    }
+  },
+  methods: {
+    handleResizeEvents () {
+      if (process.isClient) {
+        this.updateViewportHeight()
+      }
+    },
+    updateViewportHeight () {
+      const windowHeight = window.innerHeight
+      const headerHeight = document.getElementById('nav').clientHeight
+
+      document.documentElement.style.setProperty('--navbarHeight', `${headerHeight}px`)
+      document.documentElement.style.setProperty('--viewportHeight', `${windowHeight}px`)
+    }
   }
 }
 </script>
 
 <style>
+:root {
+  --viewportHeight: 100vh;
+  --navbarHeight: 0vh;
+}
+
 html, body {
   scroll-behavior: smooth;
   @apply h-full;
@@ -54,6 +86,14 @@ html, body {
 
 #app {
   overflow: hidden;
+}
+
+.min-h-view {
+  min-height: var(--viewportHeight, 100vh);
+}
+
+.h-view-minus-nav {
+  height: calc(var(--viewportHeight, 100vh) - var(--navbarHeight, 0vh));
 }
 
 .fade-slide-enter,
