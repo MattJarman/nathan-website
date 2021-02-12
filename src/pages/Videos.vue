@@ -39,7 +39,7 @@ query {
 </page-query>
 
 <script>
-import Video from '@/components/Video'
+import Video from '../components/Video'
 
 export default {
   name: 'Videos',

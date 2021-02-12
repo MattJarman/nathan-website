@@ -22,8 +22,8 @@ query {
 </static-query>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
-import SocialLinks from '@/components/SocialLinks.vue'
+import Navbar from 'components/Navbar'
+import SocialLinks from 'components/SocialLinks'
 
 export default {
   name: 'App',
