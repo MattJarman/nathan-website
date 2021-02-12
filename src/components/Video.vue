@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import ReadMore from '@/components/ReadMore'
+import ReadMore from './ReadMore'
 
 export default {
   name: 'Video',

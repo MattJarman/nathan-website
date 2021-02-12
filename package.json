@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "gridsome": "^0.7.0",
+    "particles.vue": "^2.1.12",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1"
   },
   "devDependencies": {

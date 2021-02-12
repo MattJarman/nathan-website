@@ -176,28 +176,14 @@ export default {
   },
   created () {
     if (process.isClient) {
-      window.addEventListener('resize', this.handleResizeEvents)
       this.setCSSVariables()
-    }
-  },
-  beforeDestroy () {
-    if (process.isClient) {
-      window.removeEventListener('resize', this.handleResizeEvents)
     }
   },
   methods: {
     handleResizeEvents () {
       if (process.isClient) {
-        this.updateViewportHeight()
         this.updateContentPadding()
       }
-    },
-    updateViewportHeight () {
-      const windowHeight = window.innerHeight
-      const headerHeight = document.getElementById('nav').clientHeight
-
-      document.documentElement.style.setProperty('--navbarHeight', `${headerHeight}px`)
-      document.documentElement.style.setProperty('--viewportHeight', `${windowHeight}px`)
     },
     updateContentPadding () {
       const width = window.innerWidth
@@ -255,13 +241,5 @@ export default {
 .skewed-content {
   padding-top: calc(var(--skewedContentPaddingY) * 2);
   padding-bottom: calc(var(--skewedContentPaddingY) * 2);
-}
-
-.min-h-view {
-  min-height: var(--viewportHeight, 100vh);
-}
-
-.h-view-minus-nav {
-  height: calc(var(--viewportHeight, 100vh) - var(--navbarHeight, 0vh));
 }
 </style>

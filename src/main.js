@@ -6,16 +6,17 @@ import {
   faAngleUp,
   faCamera,
   faExternalLinkAlt,
-  faFileAlt,
   faHome,
   faTv,
   faVideo
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Particles from 'particles.vue'
 import smoothscroll from 'smoothscroll-polyfill'
 import VueLazyload from 'vue-lazyload'
 import DefaultLayout from '~/layouts/Default.vue'
 import PaddedLayout from '~/layouts/Padded.vue'
+import Helpers from './mixins/Helpers'
 import '~/tailwind.css'
 
 export default function (Vue, { router, head, isClient }) {
@@ -29,7 +30,6 @@ export default function (Vue, { router, head, isClient }) {
     faAngleUp,
     faCamera,
     faVideo,
-    faFileAlt,
     faHome,
     faTv,
     faUser,
@@ -41,10 +41,13 @@ export default function (Vue, { router, head, isClient }) {
   }
 
   Vue.use(VueLazyload)
+  Vue.use(Particles)
 
   // Layouts
   Vue.component('Layout', DefaultLayout)
   Vue.component('Padded', PaddedLayout)
 
   Vue.component('font-awesome-icon', FontAwesomeIcon)
+
+  Vue.mixin(Helpers)
 }
