@@ -1,9 +1,9 @@
 <template>
-  <div id="app" class="min-h-full">
+  <div id="app">
     <header id="nav">
       <navbar />
     </header>
-    <transition name="fade-slide" mode="out-in" type="transition" appear>
+    <transition name="fade-slide" mode="out-in" type="transition">
       <router-view/>
     </transition>
     <footer>
