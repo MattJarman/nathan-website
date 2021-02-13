@@ -8,7 +8,7 @@ export default {
   },
   particles: {
     color: {
-      value: '#10B981'
+      value: '#047857'
     },
     links: {
       color: '#10B981',
@@ -31,9 +31,9 @@ export default {
     number: {
       density: {
         enable: true,
-        value_area: 800
+        value_area: 1000
       },
-      value: 120
+      value: 80
     },
     shape: {
       type: 'circle'
