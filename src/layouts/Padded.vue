@@ -9,7 +9,3 @@ export default {
   name: 'Padded'
 }
 </script>
-
-<style scoped>
-
-</style>

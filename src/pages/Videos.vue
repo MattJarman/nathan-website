@@ -3,17 +3,17 @@
     <div class="mb-16 lg:mb-0">
       <div class="flex flex-wrap -mx-2">
         <div
-          v-for="(video, index) in $page.videos.edges"
-          :key="video.node.id"
-          class="w-full p-2 sm:w-1/2 xl:w-1/3"
-          :class="getGradient(index)"
+            v-for="(video, index) in $page.videos.edges"
+            :key="video.node.id"
+            class="p-2 w-full sm:w-1/2 xl:w-1/3"
+            :class="getGradient(index)"
         >
           <Video
-            :title="video.node.title"
-            :description="video.node.description"
-            :embed="video.node.embed"
-            :link="video.node.externalLink"
-            :tags="video.node.tags"
+              :title="video.node.title"
+              :description="video.node.description"
+              :embed="video.node.embed"
+              :link="video.node.externalLink"
+              :tags="video.node.tags"
           />
         </div>
       </div>
@@ -70,6 +70,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-</style>

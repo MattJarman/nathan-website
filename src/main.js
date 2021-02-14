@@ -19,7 +19,7 @@ import PaddedLayout from '~/layouts/Padded.vue'
 import Helpers from './mixins/Helpers'
 import '~/tailwind.css'
 
-export default function (Vue, { router, head, isClient }) {
+export default function (Vue) {
   library.add(
     faFacebookSquare,
     faLinkedin,

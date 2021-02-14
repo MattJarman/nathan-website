@@ -1,12 +1,12 @@
 <template>
   <Padded class="mb-16 md:mb-0">
-    <div class="gap-1 mb-4 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 sm:gap-2">
+    <div class="grid grid-cols-2 gap-1 mb-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 sm:gap-2">
       <expandable-image
-        v-for="image in $page.photos.edges"
-        :key="image.node.id"
-        :image="image.node.formats"
-        class="shadow-md"
-        :id="image.node.id"
+          v-for="image in $page.photos.edges"
+          :key="image.node.id"
+          :image="image.node.formats"
+          class="shadow-md"
+          :id="image.node.id"
       />
     </div>
   </Padded>
@@ -14,6 +14,7 @@
 
 <script>
 import ExpandableImage from '../components/ExpandableImage'
+
 export default {
   name: 'Photos',
   metaInfo: {

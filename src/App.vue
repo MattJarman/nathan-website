@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <header id="nav">
-      <navbar />
+      <navbar/>
     </header>
     <transition name="fade-slide" mode="out-in" type="transition">
       <router-view/>
     </transition>
     <footer>
-      <social-links />
+      <social-links/>
     </footer>
   </div>
 </template>

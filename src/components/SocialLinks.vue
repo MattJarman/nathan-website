@@ -1,17 +1,17 @@
 <template>
   <div
-    class="fixed bottom-0 z-50 flex flex-row items-center justify-center w-full h-8 space-x-3 bg-white social-links lg:h-auto lg:w-0 lg:flex-col lg:space-x-0 lg:space-y-3 lg:ml-16 lg:items-center lg:pb-0"
+      class="flex fixed bottom-0 z-50 flex-row justify-center items-center space-x-3 w-full h-8 bg-white social-links lg:h-auto lg:w-0 lg:flex-col lg:space-x-0 lg:space-y-3 lg:ml-16 lg:items-center lg:pb-0"
   >
     <a
-      v-for="social in this.socials"
-      :key="social.id"
-      class="social-link"
-      :href="social.url"
-      target="_blank"
+        v-for="social in this.socials"
+        :key="social.id"
+        class="social-link"
+        :href="social.url"
+        target="_blank"
     >
       <font-awesome-icon
-        class="text-xl social-icon md:text-2xl"
-        :icon="social.icon"
+          class="text-xl social-icon md:text-2xl"
+          :icon="social.icon"
       />
     </a>
   </div>
@@ -77,7 +77,7 @@ export default {
   .social-links:after {
     content: "";
     width: 2px;
-    @apply h-24 text-gray-800 md:bg-green-500 block;
+    @apply block h-24 text-gray-800 md:bg-green-500;
   }
 
   .social-links a:last-of-type {
@@ -90,7 +90,7 @@ export default {
 }
 
 .social-link {
-  @apply transform duration-300 ease-in-out;
+  @apply duration-300 ease-in-out transform;
 }
 
 .social-icon:hover {
@@ -98,6 +98,6 @@ export default {
 }
 
 .social-link:hover {
-  @apply -translate-y-1 scale-110;
+  @apply scale-110 -translate-y-1;
 }
 </style>

@@ -2,16 +2,16 @@
   <div class="relative" ref="readMore">
     <div>
       <div
-        class="text-fade max-h-24"
-        v-if="needsReadMore && !readMoreActivated"
+          class="max-h-24 text-fade"
+          v-if="needsReadMore && !readMoreActivated"
       >
         {{ shortenedText }}
       </div>
-      <div class="absolute bottom-0 flex items-center justify-center w-full">
+      <div class="flex absolute bottom-0 justify-center items-center w-full">
         <span
-          v-if="!readMoreActivated && needsReadMore"
-          @click="toggleReadMore"
-          class="flex items-center justify-center w-20 py-1 text-xs font-bold bg-black shadow-md cursor-pointer"
+            v-if="!readMoreActivated && needsReadMore"
+            @click="toggleReadMore"
+            class="flex justify-center items-center py-1 w-20 text-xs font-bold bg-black shadow-md cursor-pointer"
         >
           <span>Read More</span>
         </span>
@@ -20,10 +20,10 @@
     <span v-if="readMoreActivated || !needsReadMore">
       {{ text }}
       <a
-        v-if="readMoreActivated && needsReadMore"
-        @click="toggleReadMore"
-        class="text-xs font-bold text-gray-800 cursor-pointer"
-        >Read Less</a
+          v-if="readMoreActivated && needsReadMore"
+          @click="toggleReadMore"
+          class="text-xs font-bold text-gray-800 cursor-pointer"
+      >Read Less</a
       >
     </span>
   </div>
@@ -77,17 +77,17 @@ export default {
         return 'xs'
       } else if (
         innerWidth >= this.breakpoints.xs &&
-        innerWidth < this.breakpoints.sm
+          innerWidth < this.breakpoints.sm
       ) {
         return 'sm'
       } else if (
         innerWidth >= this.breakpoints.sm &&
-        innerWidth < this.breakpoints.md
+          innerWidth < this.breakpoints.md
       ) {
         return 'md'
       } else if (
         innerWidth >= this.breakpoints.md &&
-        innerWidth < this.breakpoints.lg
+          innerWidth < this.breakpoints.lg
       ) {
         return 'lg'
       } else {
@@ -113,11 +113,11 @@ export default {
 <style scoped>
 .text-fade {
   -webkit-mask-image: -webkit-gradient(
-    linear,
-    left 50%,
-    left bottom,
-    from(rgba(0, 0, 0, 1)),
-    to(rgba(0, 0, 0, 0))
+      linear,
+      left 50%,
+      left bottom,
+      from(rgba(0, 0, 0, 1)),
+      to(rgba(0, 0, 0, 0))
   );
 }
 </style>
