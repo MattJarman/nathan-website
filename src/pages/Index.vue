@@ -7,7 +7,7 @@
     />
     <div class="text-center relative flex items-center justify-center h-full flex-col pb-64">
         <p class="mb-1 text-4xl font-bold sm:text-7xl">Nathan Ellerton</p>
-        <p class="text-xs text-gray-500 sm:text-xl pb-8">Freelance Photographer | Videographer </p>
+        <p class="text-xs text-gray-500 sm:text-xl pb-8">{{$page.about.title}}</p>
         <div class="flex items-center space-x-4 justify-center w-full">
           <g-link
               to="/photos"
@@ -25,6 +25,14 @@
       </div>
   </div>
 </template>
+
+<page-query>
+query {
+about(id: 1) {
+    title
+  }
+}
+</page-query>
 
 <script>
 import config from '../config/particles'

@@ -11,6 +11,7 @@ module.exports = function (api) {
 
     // Single types
     const about = await axios.get(`${process.env.STRAPI_URL}/about`)
+    const site = await axios.get(`${process.env.STRAPI_URL}/site`)
 
     const videoCollection = addCollection({
       typeName: 'videos'
@@ -34,6 +35,10 @@ module.exports = function (api) {
 
     const aboutCollection = addCollection({
       typeName: 'about'
+    })
+
+    const siteCollection = addCollection({
+      typeName: 'site'
     })
 
     for (const item of photos.data) {
@@ -114,9 +119,10 @@ module.exports = function (api) {
       title: about.data.title,
       avatar: avatar
     })
-  })
 
-  api.createPages(async ({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
+    siteCollection.addNode({
+      id: site.data.id,
+      description: site.data.description
+    })
   })
 }

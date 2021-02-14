@@ -17,6 +17,10 @@ query {
   metadata {
     siteName
     siteDescription
+  },
+  site(id: 1) {
+    id
+    description
   }
 }
 </static-query>
@@ -38,7 +42,7 @@ export default {
         {
           key: 'description',
           name: 'description',
-          content: this.$static.metadata.siteDescription
+          content: this.$static.site.description
         }
       ]
     }
