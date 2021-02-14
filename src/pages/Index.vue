@@ -1,8 +1,8 @@
 <template>
-  <div class="h-view-minus-nav w-full relative">
+  <div class="h-view-minus-nav w-full">
     <Particles
         id="tsparticles"
-        class="fixed h-full w-full pb-32 md:pb-0"
+        class="fixed w-full h-view-minus-nav pb-32 md:pb-0"
         :options="config"
     />
     <div class="text-center relative flex items-center justify-center h-full flex-col pb-64">
@@ -46,6 +46,11 @@ export default {
     return {
       config: config
     }
+  },
+  mounted () {
+    const particles = document.getElementById('tsparticles')
+
+    console.log(particles.width)
   }
 }
 </script>
