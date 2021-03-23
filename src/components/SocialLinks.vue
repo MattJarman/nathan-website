@@ -43,7 +43,7 @@ export default {
           if (faIcon) {
             return {
               id: edge.node.id,
-              url: edge.node.url,
+              url: this.formatIconUrl(edge.node.icon, edge.node.url),
               icon: faIcon
             }
           }
@@ -54,6 +54,14 @@ export default {
     }
   },
   methods: {
+    formatIconUrl (social, url) {
+      switch (social) {
+        case 'email':
+          return `mailto:${url}`
+        default:
+          return url
+      }
+    },
     mapSocialFaIcon (social) {
       switch (social) {
         case 'facebook':
@@ -64,6 +72,8 @@ export default {
           return ['fab', 'instagram']
         case 'youtube':
           return ['fab', 'youtube']
+        case 'email':
+          return ['fa', 'envelope']
         default:
           return false
       }
@@ -86,7 +96,7 @@ export default {
 }
 
 .social-icon {
-  @apply text-gray-800 md:text-green-500;
+  @apply text-gray-800 md:text-green-500 focus:outline-none;
 }
 
 .social-link {

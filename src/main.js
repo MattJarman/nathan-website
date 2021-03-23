@@ -8,7 +8,8 @@ import {
   faExternalLinkAlt,
   faHome,
   faTv,
-  faVideo
+  faVideo,
+  faEnvelope
 } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Particles from 'particles.vue'
@@ -33,7 +34,8 @@ export default function (Vue) {
     faHome,
     faTv,
     faUser,
-    faImage
+    faImage,
+    faEnvelope
   )
 
   if (process.isClient) {
