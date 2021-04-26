@@ -28,7 +28,7 @@ export default {
 
 <page-query>
 query {
-  photos: allPhotos(sort: [{ by: "order", order: ASC }, { by: "published", order: ASC }]) {
+  photos: allPhotos(sort: [{ by: "order", order: ASC }, { by: "published", order: DESC }]) {
     edges {
       node {
         id
