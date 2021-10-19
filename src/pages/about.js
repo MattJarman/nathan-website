@@ -153,10 +153,10 @@ const AboutPage = () => {
                   animate={introRightControls}
                   className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left"
                 >
-                  <p
+                  <div
                     className="wysiwyg leading-relaxed text-base md:text-lg mb-4"
                     dangerouslySetInnerHTML={{ __html: description }}
-                  ></p>
+                  ></div>
                 </motion.div>
               </div>
             </div>
@@ -247,14 +247,14 @@ const AboutPage = () => {
                                   <p className="mb-2 text-sm italic text-gray-500">
                                     {name}
                                   </p>
-                                  <p
+                                  <div
                                     className="wysiwyg leading-relaxed mb-4 text-xs"
                                     dangerouslySetInnerHTML={{
                                       __html: description,
                                     }}
                                   >
                                     {}
-                                  </p>
+                                  </div>
                                 </motion.div>
                               )
                             }
