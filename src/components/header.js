@@ -175,7 +175,6 @@ const Header = () => {
                             onClick={hide}
                             key={`mobile-menu-${index}`}
                             to={url}
-                            partiallyActive={true}
                             className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50 text-gray-700"
                             activeClassName="text-green-500"
                           >
