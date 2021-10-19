@@ -30,7 +30,6 @@ const PhotosPage = () => {
       <div className="mt-8 grid grid-cols-2 gap-2 mb-4 sm:gap-4 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {photoEdges.map(({ node }, index) => {
           const { image } = node
-          console.log(image)
           return (
             <motion.div
               className="sm:h-72 lg:h-96"
