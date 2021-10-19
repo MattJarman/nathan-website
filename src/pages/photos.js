@@ -27,13 +27,13 @@ const PhotosPage = () => {
   return (
     <Layout>
       <Seo title="Photos" />
-      <div className="mt-8 grid grid-cols-2 gap-2 mb-4 sm:grid-cols-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      <div className="mt-8 grid grid-cols-2 gap-2 mb-4 sm:gap-4 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {photoEdges.map(({ node }, index) => {
           const { image } = node
           console.log(image)
           return (
             <motion.div
-              className="h-56 h-72 md:h-96"
+              className="sm:h-72 lg:h-96"
               initial={{ opacity: 0, x: 20 }}
               animate={photoControls}
               ref={photosRef}

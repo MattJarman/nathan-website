@@ -37,13 +37,13 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Home" />
-      <div className="flex flex-col space-y-2 mt-64">
+      <div className="flex flex-col space-y-2 mt-32 md:mt-64">
         <div className="flex space-x-4">
           <motion.p
             ref={titleRef}
             initial={{ opacity: 0, y: 20 }}
             animate={titleControls}
-            className="text-6xl font-semibold text-green-500 tracking-wide"
+            className="text-4xl md:text-6xl font-semibold text-green-500 tracking-wide"
           >
             Nathan Ellerton
           </motion.p>
@@ -51,12 +51,14 @@ const IndexPage = () => {
             ref={greetingRef}
             initial={{ opacity: 0, y: 20 }}
             animate={greetingControls}
-            className="text-6xl"
+            className="text-4xl md:text-6xl"
           >
             👋
           </motion.p>
         </div>
-        <div className="leading-relaxed text-3xl text-gray-600">{title}</div>
+        <div className="leading-relaxed text-lg md:text-3xl text-gray-600">
+          {title}
+        </div>
       </div>
     </Layout>
   )
