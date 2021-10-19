@@ -43,7 +43,6 @@ const PhotosPage = () => {
                 className="shadow-xl rounded-sm"
                 alt="image"
                 imageSmall={image.localFile.childImageSharp.small}
-                imageLarge={image.localFile.childImageSharp.large}
               />
             </motion.div>
           )
@@ -68,7 +67,6 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 small: gatsbyImageData(width: 400, placeholder: BLURRED)
-                large: gatsbyImageData(width: 800, placeholder: BLURRED)
               }
             }
           }
