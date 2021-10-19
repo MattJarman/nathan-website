@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    overflow-x: hidden
+}
+
+.wysiwyg > p > a {
+    @apply text-green-500;
+}
