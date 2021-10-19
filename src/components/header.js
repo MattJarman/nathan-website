@@ -85,7 +85,6 @@ const Header = () => {
                       to={url}
                       className="text-xl text-gray-700 hover:text-green-500"
                       activeClassName="text-green-500"
-                      partiallyActive={true}
                     >
                       {name}
                     </Link>

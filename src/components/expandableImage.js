@@ -9,6 +9,11 @@ export const ExpandableImage = props => {
     setExpanded(!expanded)
   }
 
+  const imagePreview = getImage(props.imageSmall)
+  const imageLarge = props.imageLarge
+    ? getImage(props.imageLarge)
+    : imagePreview
+
   return (
     <>
       {expanded && (
@@ -36,7 +41,7 @@ export const ExpandableImage = props => {
                 <GatsbyImage
                   className="rounded-md expandable-image max-w-9/10 md:max-h-9/10"
                   alt={props.alt}
-                  image={getImage(props.image)}
+                  image={imageLarge}
                   loading="lazy"
                 />
               </div>
@@ -48,7 +53,7 @@ export const ExpandableImage = props => {
         onClick={toggleExpanded}
         className={`object-cover h-full cursor-pointer ${props.className}`}
         alt={props.alt}
-        image={getImage(props.image)}
+        image={imagePreview}
         loading={props.loading || 'eager'}
       />
     </>
@@ -57,7 +62,8 @@ export const ExpandableImage = props => {
 
 ExpandableImage.propTypes = {
   ref: PropTypes.node,
-  image: PropTypes.any.isRequired,
+  imageSmall: PropTypes.any.isRequired,
+  imageLarge: PropTypes.any,
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
   loading: PropTypes.oneOf(['lazy', 'eager']),

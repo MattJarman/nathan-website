@@ -2,18 +2,23 @@ export default {
   navLinks: {
     menu: [
       {
+        name: 'Home',
+        url: '/',
+        icon: 'house',
+      },
+      {
         name: 'Photos',
-        url: '/photos',
+        url: '/photos/',
         icon: 'image',
       },
       {
         name: 'Videos',
-        url: '/videos',
+        url: '/videos/',
         icon: 'film',
       },
       {
         name: 'About',
-        url: '/about',
+        url: '/about/',
         icon: 'person',
       },
     ],

@@ -29,6 +29,8 @@ const PhotosPage = () => {
       <Seo title="Photos" />
       <div className="mt-8 grid grid-cols-2 gap-2 mb-4 sm:grid-cols-3 sm:gap-4 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {photoEdges.map(({ node }, index) => {
+          const { image } = node
+          console.log(image)
           return (
             <motion.div
               className="h-56 h-72 md:h-96"
@@ -41,7 +43,8 @@ const PhotosPage = () => {
               <ExpandableImage
                 className="shadow-xl rounded-sm"
                 alt="image"
-                image={node.image.localFile}
+                imageSmall={image.localFile.childImageSharp.small}
+                imageLarge={image.localFile.childImageSharp.large}
               />
             </motion.div>
           )
@@ -65,7 +68,8 @@ export const query = graphql`
           image {
             localFile {
               childImageSharp {
-                gatsbyImageData(placeholder: BLURRED)
+                small: gatsbyImageData(width: 400, placeholder: BLURRED)
+                large: gatsbyImageData(placeholder: BLURRED)
               }
             }
           }

@@ -5,6 +5,7 @@ import Person from './person'
 import External from './external'
 import Image from './image'
 import Film from './film'
+import House from './house'
 import Lighting from './lighting'
 import Editing from './editing'
 import ColourGrading from './colourGrading'
@@ -28,6 +29,8 @@ const Icon = props => {
       return <Image {...props} />
     case 'film':
       return <Film {...props} />
+    case 'house':
+      return <House {...props} />
     case 'linkedin':
       return <LinkedIn {...props} />
     case 'facebook':
