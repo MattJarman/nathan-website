@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import Seo from '../components/seo'
 import ExpandableImage from '../components/expandableImage'
 import { motion, useAnimation } from 'framer-motion'
+import { getImage } from 'gatsby-plugin-image'
 
 const PhotosPage = () => {
   const {
@@ -42,7 +43,9 @@ const PhotosPage = () => {
               <ExpandableImage
                 className="shadow-xl rounded-sm"
                 alt="image"
-                imageSmall={image.localFile.childImageSharp.small}
+                imageSmall={getImage(image.localFile.small)}
+                imageLarge={getImage(image.localFile.large)}
+                loading="lazy"
               />
             </motion.div>
           )
@@ -65,8 +68,21 @@ export const query = graphql`
           Name
           image {
             localFile {
-              childImageSharp {
-                small: gatsbyImageData(width: 400, placeholder: BLURRED)
+              small: childImageSharp {
+                gatsbyImageData(
+                  width: 300
+                  quality: 25
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
+              }
+              large: childImageSharp {
+                gatsbyImageData(
+                  width: 800
+                  quality: 100
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP]
+                )
               }
             }
           }
