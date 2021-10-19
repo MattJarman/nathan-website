@@ -14,7 +14,7 @@ const PhotosPage = () => {
 
   const photoControls = useAnimation()
 
-  const delay = 0.1
+  const delay = 0.05
 
   useEffect(() => {
     photoControls.start(i => ({
@@ -69,7 +69,7 @@ export const query = graphql`
             localFile {
               childImageSharp {
                 small: gatsbyImageData(width: 400, placeholder: BLURRED)
-                large: gatsbyImageData(placeholder: BLURRED)
+                large: gatsbyImageData(width: 800, placeholder: BLURRED)
               }
             }
           }
