@@ -10,9 +10,6 @@ export const ExpandableImage = props => {
   }
 
   const imagePreview = getImage(props.imageSmall)
-  const imageLarge = props.imageLarge
-    ? getImage(props.imageLarge)
-    : imagePreview
 
   return (
     <>
@@ -41,7 +38,7 @@ export const ExpandableImage = props => {
                 <GatsbyImage
                   className="rounded-md expandable-image max-w-9/10 md:max-h-9/10"
                   alt={props.alt}
-                  image={imageLarge}
+                  image={props.imageLarge ? getImage(props.imageLarge) : imagePreview}
                   loading="lazy"
                 />
               </div>
