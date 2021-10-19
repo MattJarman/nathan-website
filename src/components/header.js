@@ -85,6 +85,7 @@ const Header = () => {
                       to={url}
                       className="text-xl text-gray-700 hover:text-green-500"
                       activeClassName="text-green-500"
+                      partiallyActive={true}
                     >
                       {name}
                     </Link>
@@ -175,6 +176,7 @@ const Header = () => {
                             onClick={hide}
                             key={`mobile-menu-${index}`}
                             to={url}
+                            partiallyActive={true}
                             className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50 text-gray-700"
                             activeClassName="text-green-500"
                           >
