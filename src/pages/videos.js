@@ -15,7 +15,7 @@ const VideosPage = () => {
 
   const videoControls = useAnimation()
 
-  const delay = 0.25
+  const delay = 0.1
 
   useEffect(() => {
     videoControls.start(i => ({

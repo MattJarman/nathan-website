@@ -28,7 +28,7 @@ const PhotosPage = () => {
   return (
     <Layout>
       <Seo title="Photos" />
-      <div className="mt-8 grid grid-cols-2 gap-2 mb-4 sm:gap-4 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      <div className="mt-8 grid gap-2 justify-items-center mb-4 xs:grid-cols-2 sm:gap-4 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {photoEdges.map(({ node }, index) => {
           const { image } = node
           return (
@@ -70,7 +70,7 @@ export const query = graphql`
             localFile {
               small: childImageSharp {
                 gatsbyImageData(
-                  width: 300
+                  width: 400
                   quality: 25
                   placeholder: BLURRED
                   formats: [AUTO, WEBP]

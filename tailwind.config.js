@@ -1,8 +1,14 @@
+const defaultTheme = require('tailwindcss/defaultTheme')
+
 module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
       sans: ['Open Sans', 'sans-serif'],
+    },
+    screens: {
+      xs: '475px',
+      ...defaultTheme.screens,
     },
     extend: {
       maxHeight: {
