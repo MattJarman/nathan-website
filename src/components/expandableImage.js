@@ -6,7 +6,6 @@ export const ExpandableImage = props => {
   const [expanded, setExpanded] = useState(false)
 
   const toggleExpanded = () => {
-    console.log(`Toggling image expansion: ${!expanded}`)
     setExpanded(!expanded)
   }
 
@@ -47,13 +46,14 @@ export const ExpandableImage = props => {
           </div>
         </div>
       )}
-      <GatsbyImage
-        onClick={toggleExpanded}
-        className={`object-cover h-full cursor-pointer ${props.className}`}
-        alt={props.alt}
-        image={imagePreview}
-        loading={props.loading || 'eager'}
-      />
+      <div className="h-full" onClick={toggleExpanded}>
+        <GatsbyImage
+          className={`object-cover h-full cursor-pointer ${props.className}`}
+          alt={props.alt}
+          image={imagePreview}
+          loading={props.loading || 'eager'}
+        />
+      </div>
     </>
   )
 }
