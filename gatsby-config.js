@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: 'https://www.nathanellerton.com',
     title: 'Nathan Ellerton',
+    author: '@NathanJEllerton',
   },
   plugins: [
     'gatsby-plugin-image',
@@ -22,7 +23,7 @@ module.exports = {
       resolve: 'gatsby-source-strapi',
       options: {
         apiURL: 'https://nathan-cms.herokuapp.com',
-        queryLimit: 1000, // Defaults to 100
+        queryLimit: 1000,
         collectionTypes: ['experience', 'photo', 'social', 'video', 'skill'],
         singleTypes: [`about`, `site`],
       },

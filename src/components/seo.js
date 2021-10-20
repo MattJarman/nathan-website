@@ -8,10 +8,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Helmet } from 'react-helmet'
+import { graphql, useStaticQuery } from 'gatsby'
 
 function Seo({ description, lang, meta, title }) {
-  const metaDescription = description
-  const defaultTitle = 'Nathan Ellerton'
+  const { strapiSite, site } = useStaticQuery(query)
+
+  const metaDescription = description || strapiSite.description
+  const defaultTitle = site.siteMetadata.title
 
   return (
     <Helmet
@@ -43,7 +46,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           name: 'twitter:creator',
-          content: 'Author',
+          content: site.siteMetadata?.author || '',
         },
         {
           name: 'twitter:title',
@@ -57,6 +60,20 @@ function Seo({ description, lang, meta, title }) {
     />
   )
 }
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+        author
+      }
+    }
+    strapiSite {
+      description
+    }
+  }
+`
 
 Seo.defaultProps = {
   lang: 'en',
