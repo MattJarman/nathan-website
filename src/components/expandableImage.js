@@ -6,6 +6,7 @@ export const ExpandableImage = props => {
   const [expanded, setExpanded] = useState(false)
 
   const toggleExpanded = () => {
+    console.log(`Toggling image expansion: ${!expanded}`)
     setExpanded(!expanded)
   }
 
