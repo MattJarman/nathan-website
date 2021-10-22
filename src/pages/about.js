@@ -46,7 +46,7 @@ const AboutPage = () => {
   const experienceRef = useRef()
 
   const introOnScreen = useOnScreen(introRef)
-  const skillsOnScreen = useOnScreen(skillsRef)
+  const skillsOnScreen = useOnScreen(skillsRef, 0.1)
   const experienceOnScreen = useOnScreen(experienceRef, 0.1)
 
   // Intro controls
