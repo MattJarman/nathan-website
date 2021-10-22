@@ -11,7 +11,7 @@ const SkillsSection = () => {
 
   const skillsRef = useRef()
 
-  const skillsOnScreen = useOnScreen(skillsRef, 0.1)
+  const skillsOnScreen = useOnScreen(skillsRef)
 
   const iconControls = useAnimation()
   const barControls = useAnimation()
@@ -42,7 +42,10 @@ const SkillsSection = () => {
 
   return (
     <section className="text-gray-600 body-font">
-      <div className="container px-5 py-24 mx-auto flex flex-col lg:w-4/6 lg:mx-auto">
+      <div
+        ref={skillsRef}
+        className="container px-5 py-24 mx-auto flex flex-col lg:w-4/6 lg:mx-auto"
+      >
         <div className="grid gap-y-2 grid-cols-1 md:grid-cols-none md:grid-rows-6 md:grid-flow-col xl:gap-y-4">
           {skillEdges.map(({ node }, index) => {
             const { id, name, level } = node
@@ -53,7 +56,6 @@ const SkillsSection = () => {
               >
                 <motion.div
                   custom={index}
-                  ref={skillsRef}
                   initial={{ opacity: 0, x: 20 }}
                   animate={iconControls}
                   className="flex items-center justify-center mr-4 shadow-md p-2 rounded-md w-12 h-12 xl:w-16 xl:h-16"
