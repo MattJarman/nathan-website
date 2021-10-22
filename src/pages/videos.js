@@ -57,12 +57,12 @@ const VideosPage = () => {
                   {description}
                 </p>
                 <div className="flex justify-end">
-                  <div className="flex items-center flex-grow space-x-4">
+                  <div className="flex items-center flex-grow space-x-2">
                     {tags.map((tag, index) => {
                       return (
                         <div
                           key={`${id}-tag-${index}`}
-                          className="text-xs bg-gray-100 rounded-sm px-2 py-1 tracking-wide"
+                          className="text-xs bg-gray-200 text-gray-700 rounded-full px-3 py-1 tracking-wide"
                         >
                           {tag}
                         </div>
