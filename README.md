@@ -1,6 +1,4 @@
-<h1 align="center">
-  Nathan's Website V2
-</h1>
+# Nathan's Website V2
 
 
 ## 🚀 Quick start
