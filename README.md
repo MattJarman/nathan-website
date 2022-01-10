@@ -1,5 +1,4 @@
-# Nathan's Website V2
-
+# Nathan's Website
 
 ## 🚀 Quick start
 
