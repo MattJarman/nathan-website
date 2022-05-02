@@ -1,6 +1,6 @@
 # Nathan's Website
 
-The accompanying CMS can be found [here](https://github.com/MattJarman/nathan-cms]).
+The accompanying CMS can be found [here](https://github.com/MattJarman/nathan-cms).
 
 ## 🚀 Quick start
 
