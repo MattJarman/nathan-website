@@ -8,7 +8,7 @@ import { getImage } from 'gatsby-plugin-image'
 
 const PhotosPage = () => {
   const {
-    allStrapiPhoto: { edges: photoEdges },
+    allStrapiPhoto: { edges: photoEdges }
   } = useStaticQuery(query)
 
   const photosRef = useRef()
@@ -18,17 +18,17 @@ const PhotosPage = () => {
   const delay = 0.05
 
   useEffect(() => {
-    photoControls.start(i => ({
+    photoControls.start((i) => ({
       opacity: 1,
       x: 0,
-      transition: { delay: i * delay },
+      transition: { delay: i * delay }
     }))
   }, [photoControls])
 
   return (
     <Layout>
       <Seo title="Photos" />
-      <div className="mt-8 grid gap-2 justify-items-center mb-4 xs:grid-cols-2 sm:gap-4 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+      <div className="grid gap-2 mt-8 mb-4 justify-items-center xs:grid-cols-2 sm:gap-4 sm:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
         {photoEdges.map(({ node }, index) => {
           const { image } = node
           return (
@@ -38,10 +38,9 @@ const PhotosPage = () => {
               animate={photoControls}
               ref={photosRef}
               key={index}
-              custom={index}
-            >
+              custom={index}>
               <ExpandableImage
-                className="shadow-xl rounded-sm"
+                className="rounded-sm shadow-xl"
                 alt="image"
                 imageSmall={getImage(image.localFile.small)}
                 imageLarge={getImage(image.localFile.large)}

@@ -4,23 +4,23 @@ export default {
       {
         name: 'Home',
         url: '/',
-        icon: 'house',
+        icon: 'house'
       },
       {
         name: 'Photos',
         url: '/photos/',
-        icon: 'image',
+        icon: 'image'
       },
       {
         name: 'Videos',
         url: '/videos/',
-        icon: 'film',
+        icon: 'film'
       },
       {
         name: 'About',
         url: '/about/',
-        icon: 'person',
-      },
-    ],
-  },
+        icon: 'person'
+      }
+    ]
+  }
 }

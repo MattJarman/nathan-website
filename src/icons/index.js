@@ -19,7 +19,7 @@ import Instagram from './instagram'
 import Youtube from './youtube'
 import Envelope from './envelope'
 
-const Icon = props => {
+const Icon = (props) => {
   switch (props.name.toLowerCase()) {
     case 'person':
       return <Person {...props} />
@@ -61,7 +61,7 @@ const Icon = props => {
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
-  className: PropTypes.string,
+  className: PropTypes.string
 }
 
 export default Icon

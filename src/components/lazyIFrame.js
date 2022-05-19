@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import PropTypes from 'prop-types'
 import { useOnScreen } from '../hooks'
 
-const getYoutubeId = url => {
+const getYoutubeId = (url) => {
   const parsed = url
     .replace(/(>|<)/gi, '')
     .split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/)
@@ -28,8 +28,7 @@ const LazyIFrame = ({ url, title, className }) => {
         <lite-youtube
           videoid={getYoutubeId(url)}
           title={title}
-          videotitle={title}
-        ></lite-youtube>
+          videotitle={title}></lite-youtube>
       )}
     </div>
   )
@@ -38,7 +37,7 @@ const LazyIFrame = ({ url, title, className }) => {
 LazyIFrame.propTypes = {
   url: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  className: PropTypes.string,
+  className: PropTypes.string
 }
 
 export default LazyIFrame

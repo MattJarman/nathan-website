@@ -1,31 +1,29 @@
-import { motion, useAnimation } from 'framer-motion'
+import { useAnimation } from 'framer-motion'
 import { graphql, useStaticQuery } from 'gatsby'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import React, { useRef, useEffect } from 'react'
 import IntroductionSection from './sections/introduction'
 import { useOnScreen } from '../hooks'
 import Layout from '../components/layout'
 import Seo from '../components/seo'
-import Icon from '../icons'
 import SkillsSection from './sections/skills'
 import ExperienceSection from './sections/experience'
 
 const AboutPage = () => {
   const {
-    allStrapiExperience: { edges: experienceEdges },
+    allStrapiExperience: { edges: experienceEdges }
   } = useStaticQuery(query)
 
   const groupedExperiences = []
   for (const { node } of experienceEdges) {
     const foundYearIndex = groupedExperiences.findIndex(
-      experience => experience.yearEnd === node.yearEnd
+      (experience) => experience.yearEnd === node.yearEnd
     )
 
     const experience = {
       id: node.id,
       title: node.title,
       name: node.name,
-      description: node.description,
+      description: node.description
     }
 
     if (foundYearIndex > -1) {
@@ -35,7 +33,7 @@ const AboutPage = () => {
 
     groupedExperiences.push({
       yearEnd: node.yearEnd,
-      experiences: [experience],
+      experiences: [experience]
     })
   }
 
@@ -51,7 +49,7 @@ const AboutPage = () => {
       experienceControls.start({
         opacity: 1,
         x: 0,
-        transition: { delay: 0.25 },
+        transition: { delay: 0.25 }
       })
     }
   }, [experienceOnScreen, experienceControls])

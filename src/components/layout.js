@@ -19,9 +19,8 @@ const Layout = ({ children }) => {
             type: 'spring',
             mass: 0.35,
             stiffness: 75,
-            duration: 0.1,
-          }}
-        >
+            duration: 0.1
+          }}>
           {children}
         </motion.main>
         <Footer siteTitle="Nathan Ellerton" />
@@ -31,7 +30,7 @@ const Layout = ({ children }) => {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 }
 
 export default Layout

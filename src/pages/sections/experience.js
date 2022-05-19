@@ -5,20 +5,20 @@ import { useOnScreen } from '../../hooks'
 
 const ExperienceSection = () => {
   const {
-    allStrapiExperience: { edges: experienceEdges },
+    allStrapiExperience: { edges: experienceEdges }
   } = useStaticQuery(query)
 
   let groupedExperiences = []
   for (const { node } of experienceEdges) {
     const foundYearIndex = groupedExperiences.findIndex(
-      experience => experience.yearEnd === node.yearEnd
+      (experience) => experience.yearEnd === node.yearEnd
     )
 
     const experience = {
       id: node.id,
       title: node.title,
       name: node.name,
-      description: node.description,
+      description: node.description
     }
 
     if (foundYearIndex > -1) {
@@ -28,7 +28,7 @@ const ExperienceSection = () => {
 
     groupedExperiences.push({
       yearEnd: node.yearEnd,
-      experiences: [experience],
+      experiences: [experience]
     })
   }
 
@@ -48,7 +48,7 @@ const ExperienceSection = () => {
       experienceControls.start({
         opacity: 1,
         x: 0,
-        transition: { delay: 0.25 },
+        transition: { delay: 0.25 }
       })
     }
   }, [experienceOnScreen, experienceControls])
@@ -61,14 +61,12 @@ const ExperienceSection = () => {
             ref={experienceRef}
             initial={{ opacity: 0, y: 20 }}
             animate={experienceControls}
-            className="container flex flex-wrap px-5 mx-auto"
-          >
+            className="container flex flex-wrap px-5 mx-auto">
             {groupedExperiences.map((groupedExperience, index) => {
               return (
                 <div
                   key={groupedExperience.yearEnd}
-                  className="flex relative pt-10 mx-auto w-full md:w-2/3"
-                >
+                  className="flex relative pt-10 mx-auto w-full md:w-2/3">
                   <div className="flex absolute -left-12 justify-center w-16 transform -rotate-90 md:rotate-0 md:pr-8 md:w-12">
                     <span className="text-gray-400 tracking-wide font-semibold">
                       {groupedExperience.yearEnd}
@@ -85,8 +83,7 @@ const ExperienceSection = () => {
                           return (
                             <motion.div
                               key={`${groupedExperience.yearEnd}-${index}`}
-                              className="mb-8 last:mb-0"
-                            >
+                              className="mb-8 last:mb-0">
                               <p className="text-xl font-semibold text-black md:text-3xl">
                                 {title}
                               </p>
@@ -96,9 +93,8 @@ const ExperienceSection = () => {
                               <div
                                 className="wysiwyg leading-relaxed mb-4 text-xs"
                                 dangerouslySetInnerHTML={{
-                                  __html: description,
-                                }}
-                              >
+                                  __html: description
+                                }}>
                                 {}
                               </div>
                             </motion.div>

@@ -13,7 +13,7 @@ export default (ref, threshold = 0.25) => {
         }
       },
       {
-        threshold,
+        threshold
       }
     )
 

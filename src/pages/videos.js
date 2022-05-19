@@ -8,7 +8,7 @@ import LazyIFrame from '../components/lazyIFrame'
 
 const VideosPage = () => {
   const {
-    allStrapiVideo: { edges: videoEdges },
+    allStrapiVideo: { edges: videoEdges }
   } = useStaticQuery(query)
 
   const videosRef = useRef()
@@ -18,10 +18,10 @@ const VideosPage = () => {
   const delay = 0.1
 
   useEffect(() => {
-    videoControls.start(i => ({
+    videoControls.start((i) => ({
       opacity: 1,
       x: 0,
-      transition: { delay: i * delay },
+      transition: { delay: i * delay }
     }))
   }, [videoControls])
 
@@ -38,8 +38,7 @@ const VideosPage = () => {
               ref={videosRef}
               custom={index}
               key={id}
-              className="p-2 w-full sm:w-1/2 xl:w-1/3 self-stretch"
-            >
+              className="p-2 w-full sm:w-1/2 xl:w-1/3 self-stretch">
               <div className="flex flex-col shadow-lg p-4 space-y-4 rounded-md bg-white h-full">
                 <div className="w-full">
                   <div className="aspect-w-16 aspect-h-9">
@@ -62,8 +61,7 @@ const VideosPage = () => {
                       return (
                         <div
                           key={`${id}-tag-${index}`}
-                          className="text-xs bg-gray-200 text-gray-700 rounded-full px-3 py-1 tracking-wide"
-                        >
+                          className="text-xs bg-gray-200 text-gray-700 rounded-full px-3 py-1 tracking-wide">
                           {tag}
                         </div>
                       )

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Editing = props => {
+const Editing = (props) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -10,8 +10,7 @@ const Editing = props => {
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      {...props}
-    >
+      {...props}>
       <path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z" />
     </svg>
   )

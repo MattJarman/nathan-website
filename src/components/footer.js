@@ -15,7 +15,7 @@ const Footer = ({ siteTitle }) => {
 }
 
 Footer.propTypes = {
-  siteTitle: PropTypes.string,
+  siteTitle: PropTypes.string
 }
 
 export default Footer
