@@ -15,8 +15,6 @@ module.exports = {
         icon: 'src/assets/favicon.png'
       }
     },
-    'gatsby-transformer-remark',
-    'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
