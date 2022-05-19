@@ -9,7 +9,7 @@ export const wrapPageElement = ({ element }) => (
 
 export const shouldUpdateScroll = ({
   routerProps: { location },
-  getSavedScrollPosition,
+  getSavedScrollPosition
 }) => {
   const TRANSITION_DELAY = 0.3 * 1000 * 2
   let timeout = () => window.scrollTo(0, 0)

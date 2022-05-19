@@ -55,7 +55,7 @@ const ExperienceSection = () => {
 
   return (
     <section id="experience" className="flex flex-col items-center min-h-view">
-      <div className="container flex-grow px-4 my-12 mx-auto content sm:px-16">
+      <div className="container flex-grow px-4 mx-auto my-12 content sm:px-16">
         <div className="text-gray-600 body-font">
           <motion.div
             ref={experienceRef}
@@ -66,18 +66,18 @@ const ExperienceSection = () => {
               return (
                 <div
                   key={groupedExperience.yearEnd}
-                  className="flex relative pt-10 mx-auto w-full md:w-2/3">
-                  <div className="flex absolute -left-12 justify-center w-16 transform -rotate-90 md:rotate-0 md:pr-8 md:w-12">
-                    <span className="text-gray-400 tracking-wide font-semibold">
+                  className="relative flex w-full pt-10 mx-auto md:w-2/3">
+                  <div className="absolute flex justify-center w-16 transform -rotate-90 -left-12 md:rotate-0 md:pr-8 md:w-12">
+                    <span className="font-semibold tracking-wide text-gray-400">
                       {groupedExperience.yearEnd}
                     </span>
                   </div>
-                  <div className="flex absolute inset-0 justify-center items-center w-6 h-full">
-                    <div className="w-1 h-full bg-green-500 pointer-events-none"></div>
+                  <div className="absolute inset-0 flex items-center justify-center w-6 h-full">
+                    <div className="w-1 h-full pointer-events-none bg-emerald-500"></div>
                   </div>
-                  <div className="inline-flex relative z-10 flex-shrink-0 items-center w-6 h-6 text-sm font-medium text-white bg-white rounded-full border-4 border-green-500 sm:mt-0 title-font"></div>
-                  <div className="flex flex-col flex-grow items-start pl-6 sm:items-center sm:flex-row">
-                    <div className="flex-grow py-4 mt-3 w-full border-t-2 border-gray-200">
+                  <div className="relative z-10 inline-flex items-center flex-shrink-0 w-6 h-6 text-sm font-medium text-white bg-white border-4 rounded-full border-emerald-500 sm:mt-0 title-font"></div>
+                  <div className="flex flex-col items-start flex-grow pl-6 sm:items-center sm:flex-row">
+                    <div className="flex-grow w-full py-4 mt-3 border-t-2 border-gray-200">
                       {groupedExperience.experiences.map(
                         ({ title, name, description }, index) => {
                           return (
@@ -91,7 +91,7 @@ const ExperienceSection = () => {
                                 {name}
                               </p>
                               <div
-                                className="wysiwyg leading-relaxed mb-4 text-xs"
+                                className="mb-4 text-xs leading-relaxed wysiwyg"
                                 dangerouslySetInnerHTML={{
                                   __html: description
                                 }}>

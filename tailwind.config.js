@@ -4,21 +4,20 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     fontFamily: {
-      sans: ['Open Sans', 'sans-serif'],
+      sans: ['Open Sans', 'sans-serif']
     },
     screens: {
       xs: '475px',
-      ...defaultTheme.screens,
+      ...defaultTheme.screens
     },
     extend: {
       maxHeight: {
         0: '0',
         24: '6rem',
         64: '16rem',
-        '9/10': '90%',
-      },
-    },
+        '9/10': '90%'
+      }
+    }
   },
-  variants: {},
-  plugins: [require('@tailwindcss/aspect-ratio')],
+  variants: {}
 }

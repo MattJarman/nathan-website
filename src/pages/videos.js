@@ -28,7 +28,7 @@ const VideosPage = () => {
   return (
     <Layout>
       <Seo title="Videos" />
-      <div className="flex flex-wrap justify-center -mx-2 items-stretch">
+      <div className="flex flex-wrap items-stretch justify-center -mx-2">
         {videoEdges.map(({ node }, index) => {
           const { id, embedURL, externalURL, title, description, tags } = node
           return (
@@ -38,10 +38,10 @@ const VideosPage = () => {
               ref={videosRef}
               custom={index}
               key={id}
-              className="p-2 w-full sm:w-1/2 xl:w-1/3 self-stretch">
-              <div className="flex flex-col shadow-lg p-4 space-y-4 rounded-md bg-white h-full">
+              className="self-stretch w-full p-2 sm:w-1/2 xl:w-1/3">
+              <div className="flex flex-col h-full p-4 space-y-4 bg-white rounded-md shadow-lg">
                 <div className="w-full">
-                  <div className="aspect-w-16 aspect-h-9">
+                  <div className="aspect-video">
                     <LazyIFrame
                       className="w-full rounded-md shadow-lg"
                       url={embedURL}
@@ -49,10 +49,10 @@ const VideosPage = () => {
                     />
                   </div>
                 </div>
-                <p className="border-l-4 border-green-500 pl-2 text-green-500 tracking-wide font-semibold text-2xl truncate">
+                <p className="pl-2 text-2xl font-semibold tracking-wide truncate border-l-4 border-emerald-500 text-emerald-500">
                   {title}
                 </p>
-                <p className="text-xs text-gray-700 leading-tight overflow-ellipsis flex-grow">
+                <p className="flex-grow text-xs leading-tight text-gray-700 overflow-ellipsis">
                   {description}
                 </p>
                 <div className="flex justify-end">
@@ -61,7 +61,7 @@ const VideosPage = () => {
                       return (
                         <div
                           key={`${id}-tag-${index}`}
-                          className="text-xs bg-gray-200 text-gray-700 rounded-full px-3 py-1 tracking-wide">
+                          className="px-3 py-1 text-xs tracking-wide text-gray-700 bg-gray-200 rounded-full">
                           {tag}
                         </div>
                       )
@@ -69,7 +69,7 @@ const VideosPage = () => {
                   </div>
                   <a href={externalURL} target="_blank" rel="noreferrer">
                     <Icon
-                      className="text-gray-800 text-xl w-5 cursor-pointer"
+                      className="w-5 text-xl text-gray-800 cursor-pointer"
                       name="external"
                     />
                   </a>
