@@ -6,7 +6,7 @@ The accompanying CMS can be found [here](https://github.com/MattJarman/nathan-cm
 
 1.  **Clone the project**
 
-    ```shell
+    ```bash
     $ git clone https://github.com/MattJarman/nathan-website-v2.git
     ```
 
@@ -14,14 +14,14 @@ The accompanying CMS can be found [here](https://github.com/MattJarman/nathan-cm
 
     Navigate into your new site’s directory and start it up.
 
-    ```shell
+    ```bash
     $ cd nathan-website-v2/
     $ npm i
     ```
 
 3.  **Start development server**
 
-    ```shell
+    ```bash
     $ npm run develop
     ```
 
