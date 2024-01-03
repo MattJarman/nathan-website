@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 
 export const ExpandableImage = (props) => {
   const [expanded, setExpanded] = useState(false)
@@ -9,7 +8,7 @@ export const ExpandableImage = (props) => {
     setExpanded(!expanded)
   }
 
-  const imagePreview = getImage(props.imageSmall)
+  console.log(props.imageLarge, props.imageSmall)
 
   return (
     <>
@@ -32,10 +31,10 @@ export const ExpandableImage = (props) => {
                 </svg>
               </div>
               <div className="flex items-center justify-center w-full h-full modal-content px-2">
-                <GatsbyImage
+                <img
                   className="rounded-md expandable-image max-w-9/10 md:max-h-9/10"
                   alt={props.alt}
-                  image={props.imageLarge ? props.imageLarge : imagePreview}
+                  src={props.imageLarge}
                   loading="lazy"
                 />
               </div>
@@ -44,11 +43,10 @@ export const ExpandableImage = (props) => {
         </div>
       )}
       <div className="h-full" onClick={toggleExpanded}>
-        <GatsbyImage
+        <img
           className={`object-cover h-full cursor-pointer ${props.className}`}
           alt={props.alt}
-          image={imagePreview}
-          loading={props.loading || 'eager'}
+          src={props.imageSmall}
         />
       </div>
     </>
@@ -58,7 +56,7 @@ export const ExpandableImage = (props) => {
 ExpandableImage.propTypes = {
   ref: PropTypes.node,
   imageSmall: PropTypes.any.isRequired,
-  imageLarge: PropTypes.any,
+  imageLarge: PropTypes.any.isRequired,
   alt: PropTypes.string.isRequired,
   className: PropTypes.string,
   loading: PropTypes.oneOf(['lazy', 'eager'])

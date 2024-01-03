@@ -1,7 +1,5 @@
 # Nathan's Website
 
-The accompanying CMS can be found [here](https://github.com/MattJarman/nathan-cms).
-
 ## 🚀 Quick start
 
 1.  **Clone the project**
@@ -15,7 +13,7 @@ The accompanying CMS can be found [here](https://github.com/MattJarman/nathan-cm
     Navigate into your new site’s directory and start it up.
 
     ```bash
-    $ cd nathan-website-v2/
+    $ cd nathan-website/
     $ npm i
     ```
 
@@ -26,5 +24,3 @@ The accompanying CMS can be found [here](https://github.com/MattJarman/nathan-cm
     ```
 
     The site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.com/tutorial/part-five/#introducing-graphiql)._
