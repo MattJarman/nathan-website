@@ -1,16 +1,12 @@
 import { Transition } from '@headlessui/react'
-import React, { useState, Fragment, useRef } from 'react'
-import Icon from '../icons'
-import config from '../config'
-import { graphql, Link, useStaticQuery } from 'gatsby'
-import { useOnClickOutside } from '../hooks'
 import { motion } from 'framer-motion'
+import { Link } from 'gatsby'
+import React, { Fragment, useRef, useState } from 'react'
+import config from '../config'
+import { useOnClickOutside } from '../hooks'
+import Icon from '../icons'
 
 const Header = () => {
-  const {
-    allStrapiSocial: { edges: socialEdges }
-  } = useStaticQuery(query)
-
   const [hidden, setHidden] = useState(true)
   const mobileMenuRef = useRef()
 
@@ -86,11 +82,10 @@ const Header = () => {
                 ))}
               </nav>
               <div className="items-center justify-end hidden space-x-4 md:flex md:flex-1 lg:w-0">
-                {socialEdges.map(({ node }) => {
-                  const { id, url, icon } = node
+                {config.socials.map(({ url, icon }, index) => {
                   return (
                     <motion.a
-                      key={id}
+                      key={index}
                       whileHover={{ scale: 1.1 }}
                       href={icon === 'email' ? `mailto:${url}` : url}
                       target="_blank"
@@ -178,11 +173,10 @@ const Header = () => {
                 </div>
                 <div className="px-5 py-4">
                   <div className="flex items-center justify-end space-x-4">
-                    {socialEdges.map(({ node }) => {
-                      const { id, url, icon } = node
+                    {config.socials.map(({ url, icon }, index) => {
                       return (
                         <a
-                          key={id}
+                          key={index}
                           href={icon === 'email' ? `mailto:${url}` : url}
                           target="_blank"
                           rel="noreferrer">
@@ -203,19 +197,5 @@ const Header = () => {
     </header>
   )
 }
-
-export const query = graphql`
-  query {
-    allStrapiSocial(sort: { fields: [id], order: [ASC] }) {
-      edges {
-        node {
-          id
-          url
-          icon
-        }
-      }
-    }
-  }
-`
 
 export default Header

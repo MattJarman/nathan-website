@@ -5,16 +5,14 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from 'react'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { Helmet } from 'react-helmet'
-import { graphql, useStaticQuery } from 'gatsby'
+import config from '../config'
 
 function Seo({ description, lang, meta, title }) {
-  const { strapiSite, site } = useStaticQuery(query)
-
-  const metaDescription = description || strapiSite.description
-  const defaultTitle = site.siteMetadata.title
+  const metaDescription = description || config.description
+  const defaultTitle = config.title
 
   return (
     <Helmet
@@ -45,10 +43,6 @@ function Seo({ description, lang, meta, title }) {
           content: 'summary'
         },
         {
-          name: 'twitter:creator',
-          content: site.siteMetadata?.author || ''
-        },
-        {
           name: 'twitter:title',
           content: title
         },
@@ -60,20 +54,6 @@ function Seo({ description, lang, meta, title }) {
     />
   )
 }
-
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        author
-      }
-    }
-    strapiSite {
-      description
-    }
-  }
-`
 
 Seo.defaultProps = {
   lang: 'en',

@@ -18,19 +18,10 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-source-strapi',
-      options: {
-        apiURL: 'https://nathan-cms.herokuapp.com',
-        queryLimit: 1000,
-        collectionTypes: ['experience', 'photo', 'social', 'video', 'skill'],
-        singleTypes: [`about`, `site`]
-      }
-    },
-    {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Open Sans', 'Open Sans:bold', 'Open Sans:semibold']
+          families: ['Inter', 'Inter:bold', 'Inter:semibold']
         }
       }
     },
